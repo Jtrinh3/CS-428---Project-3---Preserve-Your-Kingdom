@@ -14,11 +14,11 @@
 For *Defend your Kingdom*, we plan on using VR and will be testing with the HTC Vive. Our program we plan on using is Unity with the VRTK software. Microsoft 3D paint and Blender will be use to incorporate 3D models should we choose to create them ourselves.
 
 ## Team Members & Specific Tasks
-The members of *Defend your Kingdom* will be compose of 
+The members of *Defend your Kingdom* will be compose of James Trinh and Omar Al-khatib.
 
 | Roles | Team Member |
-| -------------------------- | ------------- |
+| ---------------------------------- | --------------------- |
 | Brainstorming | James T. & Omar A. |
-|  | |
-|  | Castle |
-|  | Enemies |
+| Storyboard |  |
+| Castle |  |
+| Enemies |  |

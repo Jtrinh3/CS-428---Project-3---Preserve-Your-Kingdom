@@ -12,7 +12,27 @@
 *Preserve your Kingdom* is a game inspired by an old flash games called [*Defend your Castle*](http://www.xgenstudios.com/play/castle).
 
 <p align="center">
-  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%201.jpg">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%201.jpg?token=AHXLFLOFD7V26TV3F2TMNMS5YZJ7A">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%202.jpg?token=AHXLFLIU3YBAZHQD2CYLBKS5YZKBE">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%203.jpg?token=AHXLFLJJOLNJXFFOA4DXWOC5YZKDE">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%204.jpg?token=AHXLFLM3QJ7FFPDAZ763FSS5YZKD2">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%205.jpg?token=AHXLFLOM5RCP36MUUOPVK2C5YZKEQ">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%206.jpg?token=AHXLFLIZNH7CDHPOXCHSWW25YZKFC">
 </p>
 
 ## Platforms & Programs

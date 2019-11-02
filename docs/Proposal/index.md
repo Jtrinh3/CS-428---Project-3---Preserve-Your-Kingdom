@@ -9,7 +9,11 @@
 
 # Preserve your Kingdom
 (**TODO** Description)
-*Preserve your Kingdom* is a game inspired by an old flash games called [*Defend your Castle*](http://www.xgenstudios.com/play/castle)
+*Preserve your Kingdom* is a game inspired by an old flash games called [*Defend your Castle*](http://www.xgenstudios.com/play/castle).
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%201.jpg">
+</p>
 
 ## Platforms & Programs
 For *Defend your Kingdom*, we plan on using VR and will be testing with the HTC Vive. Our program we plan on using is Unity with the VRTK software. Microsoft 3D paint and Blender will be use to incorporate 3D models should we choose to create them ourselves.

@@ -54,7 +54,7 @@ For *Preserve your Kingdom*, we plan on using VR and will be testing with the HT
 ## Team Members & Specific Tasks
 The members of *Preserve your Kingdom* will be compose of James Trinh and Omar Al-khatib.
 
-| Roles | Team Member | Projected Work Time |
+| Roles/Tasks | Team Member | Projected Work Time |
 | ---------------------------------- | --------------------- | - |
 | Brainstorming | James T. & Omar A. | 1 day |
 | Castle (Land, Air, & Space | James T. | 1 day |

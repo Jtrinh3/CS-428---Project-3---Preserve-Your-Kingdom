@@ -8,8 +8,7 @@
 - [ ] Links to any datasets or libraries or archives of images or objects that you plan to use
 
 # Preserve your Kingdom
-(**TODO** Description)
-*Preserve your Kingdom* is a game inspired by an old flash games called [*Defend your Castle*](http://www.xgenstudios.com/play/castle).
+Have you ever felt the need to relieve stress after a long day of school? Ever wanted to get some exercise while playing at the same time? Well *Preserve your Kingdom* is the game for you! *Preserve your Kingdom* is a game inspired by an old flash games called [*Defend your Castle*](http://www.xgenstudios.com/play/castle).
 
 <p align="center">
   <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%201.jpg?token=AHXLFLOFD7V26TV3F2TMNMS5YZJ7A">
@@ -21,13 +20,13 @@ What the game is about is that you are protecting your kingdom from an attack of
   <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%202.jpg?token=AHXLFLIU3YBAZHQD2CYLBKS5YZKBE">
 </p>
 
-In the original game, you started with nothing but your mouse to pick up stick figures and drop them, injuring them. This would translate into VR pretty nicely since we now have another dimension to worry about!
+In the original game, you started with nothing but your mouse to pick up stick figures and drop them, injuring them. This would translate into VR pretty nicely since we now have another dimension to work with, allowing the user to even walk around their own kingdom!
 
 <p align="center">
   <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%203.jpg?token=AHXLFLJJOLNJXFFOA4DXWOC5YZKDE">
 </p>
 
-As the player progress, they would be given an opportunity amass their weaponry and upgrade their castles. We plan on adding various things from multitude of timelines!
+As the player progress, they would be given an opportunity amass their weaponry and upgrade their castles. We plan on adding various things from multitude of timelines and worlds!
 
 <p align="center">
   <img width="460" height="300" src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proposal/Proposal%204.jpg?token=AHXLFLM3QJ7FFPDAZ763FSS5YZKD2">
@@ -58,11 +57,12 @@ The members of *Preserve your Kingdom* will be compose of James Trinh and Omar A
 | Roles | Team Member | Projected Work Time |
 | ---------------------------------- | --------------------- | - |
 | Brainstorming | James T. & Omar A. | 1 day |
-| Castle (Land, Air, & Space | - | 1 day |
-| Land Scenery | - | 2 days |
-| Land Enemies | - | 2~3 days |
-| Sky Scenery | - | 2 days |
-| Sky Enemies | - | 2 days |
-| Space Scenery | - | 2 days |
-| Space Enemies | - | 2~3 days |
-| Tools & Upgrades | - | 3~5 days |
+| Castle (Land, Air, & Space | James T. | 1 day |
+| Land Scenery | James T. | 2 days |
+| Land Enemies | Omar A. | 2~3 days |
+| Sky Scenery | James T. | 2 days |
+| Sky Enemies | Omar A. | 2 days |
+| Space Scenery | James T. | 2 days |
+| Space Enemies | Omar A. | 2~3 days |
+| Tools & Upgrades | James T. & Omar A. | 3~5 days |
+

@@ -3,8 +3,8 @@
 - [x] General description of the project including why VR or AR will be beneficial here
 - [x] Which hardware platform or platforms you want to develop your application for
 - [x] What software you plan to use to write the application
-- [ ] What, specifically, are you going to create
-- [ ] Who is on your team (1-3 people teams) and what their roles in the project are
+- [x] What, specifically, are you going to create
+- [x] Who is on your team (1-3 people teams) and what their roles in the project are
 - [ ] Links to any datasets or libraries or archives of images or objects that you plan to use
 
 # Preserve your Kingdom

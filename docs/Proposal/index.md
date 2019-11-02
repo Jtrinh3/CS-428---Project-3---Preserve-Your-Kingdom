@@ -56,6 +56,11 @@ The members of *Preserve your Kingdom* will be compose of James Trinh and Omar A
 | Roles | Team Member |
 | ---------------------------------- | --------------------- |
 | Brainstorming | James T. & Omar A. |
-| Storyboard |  |
-| Castle |  |
-| Enemies |  |
+| Castle (Land, Air, & Space | - |
+| Land Scenery |  |
+| Land Enemies |  |
+| Sky Scenery |  |
+| Sky Enemies |  |
+| Space Enemies |  |
+| Space Scenery |  |
+| Tools & Upgrades |  |

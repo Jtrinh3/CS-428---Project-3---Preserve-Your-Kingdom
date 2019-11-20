@@ -34,6 +34,7 @@ public class TankScript : MonoBehaviour
         curr_speed = speed;
         turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
         body = transform.GetChild(0).GetChild(0).transform;
+        Target = GameObject.Find("Tracking Cube").transform;
     }
 
     private void moveTowardTarget()
@@ -72,6 +73,7 @@ public class TankScript : MonoBehaviour
         transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
 
         yield return new WaitForSeconds(3f);
+        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
         Destroy(gameObject);
     }
 

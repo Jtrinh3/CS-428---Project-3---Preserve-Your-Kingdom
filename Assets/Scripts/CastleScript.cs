@@ -7,6 +7,7 @@ public class CastleScript : MonoBehaviour
     public Transform Castle;
     private int max_hp, curr_hp, gold, damage;
     private bool destroyed;
+    public Transform Player;
 
     public int get_max_hp()
     {
@@ -37,7 +38,11 @@ public class CastleScript : MonoBehaviour
     public void TakeDamage(int enemyDamage)
     {
         curr_hp -= damage + enemyDamage;
-        isDestroyed();
+        if(isDestroyed())
+        {
+            curr_hp = 0;
+            //Destroy(gameObject);
+        }
     }
 
     //routine for damage
@@ -81,7 +86,10 @@ public class CastleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       gameObject.GetComponentInChildren<TextMesh>().text = curr_hp.ToString();
+        gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().text = curr_hp.ToString();
+        Transform TextHolder = gameObject.transform.GetChild(0).transform;
+        TextHolder.LookAt(Player);
+        TextHolder.Rotate(new Vector3(0f, 180f, 0f));
     }
 
 

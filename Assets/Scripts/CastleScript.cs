@@ -5,10 +5,18 @@ using UnityEngine;
 public class CastleScript : MonoBehaviour
 {
     public Transform Castle;
-    private int max_hp, curr_hp, gold, damage;
+    private int max_hp, curr_hp, gold;
     private bool destroyed;
     public Transform Player;
+    private GameObject CastleStats;
 
+    //easy = 1  med = 2 hard = 3
+    public int difficulty = 0;
+
+    public void SetDifficulty(int d)
+    {
+        difficulty = d;
+    }
     public int get_max_hp()
     {
         return max_hp;
@@ -37,7 +45,7 @@ public class CastleScript : MonoBehaviour
     //enemy damage is the modifier (more difficult enemy gives more damage)
     public void TakeDamage(int enemyDamage)
     {
-        curr_hp -= damage + enemyDamage;
+        curr_hp -= difficulty + enemyDamage;
         if(isDestroyed())
         {
             curr_hp = 0;
@@ -75,19 +83,23 @@ public class CastleScript : MonoBehaviour
     void Start()
     {
         Castle = GameObject.Find("Castle").transform;
+        CastleStats = GameObject.Find("Castle Stats");
+        CastleStats.SetActive(false);
         destroyed = false;
+
         max_hp = 100;
         curr_hp = max_hp;
         gold = 0;
 
-        //when difficulty is implemented damage will change accordingly
-        damage = 1;
+        //easy = 1  med = 2 hard = 3
+        difficulty = 1;
     }
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().text = curr_hp.ToString();
+        CastleStats.transform.GetChild(0).GetComponent<TextMesh>().text = curr_hp.ToString();
         Transform TextHolder = gameObject.transform.GetChild(0).transform;
+        
         TextHolder.LookAt(Player);
         TextHolder.Rotate(new Vector3(0f, 180f, 0f));
     }

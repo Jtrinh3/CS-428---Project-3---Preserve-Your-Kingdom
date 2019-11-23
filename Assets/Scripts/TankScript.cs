@@ -46,9 +46,14 @@ public class TankScript : MonoBehaviour
         // Check if the position of the cube and sphere are approximately equal.
         if (Vector3.Distance(transform.position, Target.position) < 3f || destroyed)
         {
-            curr_speed = 0.0f;
+            curr_speed = 0.2f;
         }
-        else speed = curr_speed;
+        else curr_speed = speed;
+
+
+        Physics.IgnoreLayerCollision(9, 9, false);
+        Physics.IgnoreLayerCollision(9, 0, false);
+
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +61,11 @@ public class TankScript : MonoBehaviour
         moveTowardTarget();
 
         checkVelocity();
+
+        if(gameObject.transform.position.y < -100f)
+        {
+            destroyEnemy();
+        }
 
         turret.LookAt(Target);
         turret.Rotate(new Vector3(-90, 90, 0));
@@ -65,6 +75,13 @@ public class TankScript : MonoBehaviour
             body.LookAt(Target.position - transform.position);
             body.Rotate(new Vector3(-90, 90, 0));
         }
+    }
+
+    private void destroyEnemy()
+    {
+        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
+        Destroy(gameObject);
+
     }
 
     public IEnumerator breakEnemy()

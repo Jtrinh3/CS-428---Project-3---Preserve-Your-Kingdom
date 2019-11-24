@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoundScript : MonoBehaviour
 {
-    private GameObject roundNumberText, roundCountText, baloon;
+    private GameObject roundNumberText, roundCountText, baloon, castle;
     public GameObject Tank, FlyingTank;
     public GameObject baddies;
     public int roundNumber;
@@ -13,6 +13,8 @@ public class RoundScript : MonoBehaviour
     public int enemiesLeft = 100;
     public bool roundchange = false;
     private int counter = 0;
+    private bool gameOver = false;
+
 
     //changes what round the castle flies at
     private int FLYINGCASTLE = 2;
@@ -27,6 +29,7 @@ public class RoundScript : MonoBehaviour
     //spawns tank
     private void spawnTank()
     {
+        Random.InitState((int)Random.Range(0f, 100f));
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
         float nx = Random.Range(-40f, -70f);
@@ -59,6 +62,7 @@ public class RoundScript : MonoBehaviour
     //spawns tank
     private void spawnFlyingTank()
     {
+        Random.InitState((int)Random.Range(0f, 100f));
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
         float y = Random.Range(3f, 50f);
@@ -91,23 +95,6 @@ public class RoundScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        enemiesLeft = 100;
-        roundNumberText = GameObject.Find("Round Number");
-        roundNumberText.SetActive(false);
-        roundNumber = 0;
-        roundCountText = GameObject.Find("RoundCount");
-        roundCountText.SetActive(false);
-        roundCount = 5;
-
-        baloon = GameObject.Find("Hot Air Baloon");
-        baloon.SetActive(false);
-
-
-        Random.InitState(2);
-
-    }
 
     //changes round
     IEnumerator roundChange()
@@ -117,6 +104,7 @@ public class RoundScript : MonoBehaviour
         {
             if (roundCount == 0)
             {
+                castle.GetComponent<CastleScript>().heal(20);
                 roundCountText.SetActive(false);
                 StopCoroutine("roundChange");
                 roundNumber++;
@@ -144,16 +132,25 @@ public class RoundScript : MonoBehaviour
     {
         while (enemiesCreated < enemyNumber)
         {
+
+            Random.InitState((int)Random.Range(0f, 100f));
+            yield return new WaitForSeconds(Random.Range(2f, 7f));
+
             //uncomment when new enemies are made and the castle flies 
             //(new enimies will be needed at that point and the tank wouldn't 
             //make sense flying so it only needs to be until the casle flies)
-            if (roundNumber == FLYINGCASTLE-1)
+            if (roundNumber == FLYINGCASTLE - 1)
             {
                 spawnTank();
             }
+            //else if (roundNumber >= SPACECASTLE)  uncomment when space is added
+            //{
+            //    
+            //}
             else if (roundNumber >= FLYINGCASTLE)
+            {
                 spawnFlyingTank();
-            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            }
         }
     }
 
@@ -181,6 +178,8 @@ public class RoundScript : MonoBehaviour
             roundCountText.SetActive(true);
             roundCountText.GetComponent<TextMesh>().text = roundCount.ToString();
             enemiesLeft = 1000;
+
+            castle.GetComponent<CastleScript>().wipeDamageRoutine();
             StartCoroutine(roundChange());
             return roundchange = true;
 
@@ -194,12 +193,12 @@ public class RoundScript : MonoBehaviour
     {
         baloon.SetActive(true);
         growPlayer();
-        InvokeRepeating("floating", .2f, .3f);
+        InvokeRepeating("floating", .2f, .053f);
     }
 
     private void floating()
     {
-        if (counter == 4)
+        if (counter == 30)
         {
             counter = 0;
             CancelInvoke();
@@ -209,7 +208,7 @@ public class RoundScript : MonoBehaviour
         counter++;
 
         GameObject castle = GameObject.Find("Castle");
-        castle.transform.localPosition += new Vector3(0.0f, 0.0f, 0.02f);
+        castle.transform.localPosition += new Vector3(0.0f, 0.0f, 0.0033333f);
 
     }
 
@@ -232,9 +231,41 @@ public class RoundScript : MonoBehaviour
 
 
 
+    public void EndGame()
+    {
+        roundCountText.SetActive(true);
+        roundCountText.GetComponent<TextMesh>().fontSize -= 4;
+        roundCountText.GetComponent<TextMesh>().text = "Game Over";
+        gameOver = true;
+    }
+
+
+    void Start()
+    {
+        enemiesLeft = 100;
+        roundNumberText = GameObject.Find("Round Number");
+        roundNumberText.SetActive(false);
+        roundNumber = 0;
+        roundCountText = GameObject.Find("RoundCount");
+        roundCountText.SetActive(false);
+        roundCount = 5;
+
+        castle = GameObject.Find("Castle");
+
+        baloon = GameObject.Find("Hot Air Baloon");
+        baloon.SetActive(false);
+
+
+        //Random.InitState(2);
+
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
-        checkEndRound();
+        if(!gameOver)
+            checkEndRound();
     }
 }

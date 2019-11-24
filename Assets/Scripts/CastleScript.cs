@@ -8,10 +8,11 @@ public class CastleScript : MonoBehaviour
     private int max_hp, curr_hp, gold;
     private bool destroyed;
     public Transform Player;
-    private GameObject CastleStats;
+    private GameObject CastleStats, fire;
+    private List<Coroutine> damageCycle;
 
     //easy = 1  med = 2 hard = 3
-    public int difficulty = 0;
+    private int difficulty = 0;
 
     public void SetDifficulty(int d)
     {
@@ -25,6 +26,12 @@ public class CastleScript : MonoBehaviour
     {
         return curr_hp;
     }
+    public void heal(int h)
+    {
+        curr_hp += h;
+        if (curr_hp > max_hp)
+            curr_hp = max_hp;
+    }
     public int get_gold()
     {
         return gold;
@@ -37,9 +44,25 @@ public class CastleScript : MonoBehaviour
 
     public bool isDestroyed()
     {
-        if (curr_hp <= 0) destroyed = true;
+        if (curr_hp <= 0 && !destroyed)
+        {
+            destroyed = true;
+            fire.SetActive(true);
+            GameObject.Find("Round Tracker").GetComponent<RoundScript>().EndGame();
+        }
         return destroyed;
     }
+
+    public void wipeDamageRoutine()
+    {
+        for(int i = 0; i < damageCycle.Count; i++)
+        {
+            StopCoroutine(damageCycle[i]);
+            
+        }
+        damageCycle.Clear();
+    }
+
 
     //damages the castle
     //enemy damage is the modifier (more difficult enemy gives more damage)
@@ -49,7 +72,6 @@ public class CastleScript : MonoBehaviour
         if(isDestroyed())
         {
             curr_hp = 0;
-            //Destroy(gameObject);
         }
     }
 
@@ -68,7 +90,8 @@ public class CastleScript : MonoBehaviour
     //returns routine that is started
     public Coroutine StartDamage(int enemyDamage)
     {
-        return StartCoroutine(Damaged(enemyDamage));
+        damageCycle.Add(StartCoroutine(Damaged(enemyDamage)));
+        return damageCycle[damageCycle.Count - 1];
     }
 
 
@@ -76,7 +99,14 @@ public class CastleScript : MonoBehaviour
     //takes routine to end
     public void EndDamage(Coroutine routine)
     {
-        StopCoroutine(routine);
+        if(damageCycle.Contains(routine))
+        {
+            int index = damageCycle.IndexOf(routine);
+            StopCoroutine(damageCycle[index]);
+            damageCycle.RemoveAt(index);
+        }
+        else
+            StopCoroutine(routine);
     }
 
     // Start is called before the first frame update
@@ -84,15 +114,20 @@ public class CastleScript : MonoBehaviour
     {
         Castle = GameObject.Find("Castle").transform;
         CastleStats = GameObject.Find("Castle Stats");
+        fire = GameObject.Find("fire");
+        fire.SetActive(false);
         CastleStats.SetActive(false);
         destroyed = false;
 
-        max_hp = 100;
+        max_hp = 150;
         curr_hp = max_hp;
         gold = 0;
 
         //easy = 1  med = 2 hard = 3
         difficulty = 1;
+
+        damageCycle = new List<Coroutine>();
+
     }
     // Update is called once per frame
     void Update()
@@ -103,26 +138,5 @@ public class CastleScript : MonoBehaviour
         TextHolder.LookAt(Player);
         TextHolder.Rotate(new Vector3(0f, 180f, 0f));
     }
-
-
-
-
-
- /*   private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            InvokeRepeating("takeDamage", 1.0f, 1.0f);
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            StartCoroutine("takeDamage");
-            InvokeRepeating("takeDamage", 1.0f, 1.0f);
-        }
-    }*/
 
 }

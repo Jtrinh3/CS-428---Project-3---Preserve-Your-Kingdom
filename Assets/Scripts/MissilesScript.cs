@@ -43,19 +43,13 @@ public class MissilesScript: MonoBehaviour
         float step = curr_speed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, Target.position, step);
 
-        // Check if the position of the cube and sphere are approximately equal.
-        if (Vector3.Distance(transform.position, Target.position) < 3f || destroyed)
-        {
-            curr_speed = 0.2f;
-        }
-        else curr_speed = speed;
+        curr_speed = speed;
 
 
         Physics.IgnoreLayerCollision(9, 9, false);
         Physics.IgnoreLayerCollision(9, 0, false);
 
     }
-    // Update is called once per frame
 
 
     private void destroyEnemy()
@@ -67,10 +61,8 @@ public class MissilesScript: MonoBehaviour
 
     public IEnumerator breakEnemy()
     {
-        transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
-        transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
-
-        yield return new WaitForSeconds(3f);
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
         GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
         Destroy(gameObject);
     }
@@ -91,27 +83,22 @@ public class MissilesScript: MonoBehaviour
     }
 
 
-    //if colliding with castle begin damage routine
+    //if colliding with castle damage it
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Castle")
         {
             GameObject c = GameObject.Find("Castle");
-            damageRoutine = c.GetComponent<CastleScript>().StartDamage(1); //change inner number for additional damage
-            isCollided = true;
+            c.GetComponent<CastleScript>().TakeDamage(2); //change inner number for additional damage
         }
+
+        //comment out to disable impact destruction
+        StartCoroutine(breakEnemy());
     }
 
-    //at end of collission end damage
+
     private void OnCollisionExit(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Castle")
-        {
-            GameObject c = GameObject.Find("Castle");
-            c.GetComponent<CastleScript>().EndDamage(damageRoutine);
-            isCollided = false;
-        }
     }
 
     // Start is called before the first frame update
@@ -119,7 +106,6 @@ public class MissilesScript: MonoBehaviour
     {
         speed = 8.0f;
         curr_speed = speed;
-        turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
         body = transform.GetChild(0).GetChild(0).transform;
         Target = GameObject.Find("Tracking Cube").transform;
 
@@ -130,7 +116,6 @@ public class MissilesScript: MonoBehaviour
     {
         moveTowardTarget();
 
-        checkVelocity();
         float curr_dist = Vector3.Distance(body.position, Target.position);
         if (dist < curr_dist && !wasGrabbed)
         {
@@ -147,13 +132,11 @@ public class MissilesScript: MonoBehaviour
             destroyEnemy();
         }
 
-        turret.LookAt(Target);
-        turret.Rotate(new Vector3(-90, 90, 0));
         //turret facement to target
-        if (isGrabbed == false)
+        if (wasGrabbed == false)
         {
-            body.LookAt(Target.position - transform.position);
-            body.Rotate(new Vector3(-90, 60, 0));
+            transform.LookAt(Target.position - transform.position);
+           // transform.Rotate(new Vector3(-90, 0, 0));
         }
 
 

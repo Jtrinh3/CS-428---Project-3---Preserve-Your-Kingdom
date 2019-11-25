@@ -53,6 +53,7 @@ public class CastleScript : MonoBehaviour
         return destroyed;
     }
 
+    //removes all damage coroutines
     public void wipeDamageRoutine()
     {
         for(int i = 0; i < damageCycle.Count; i++)
@@ -108,6 +109,7 @@ public class CastleScript : MonoBehaviour
         else
             StopCoroutine(routine);
     }
+
 
     // Start is called before the first frame update
     void Start()

@@ -9,6 +9,7 @@ public class FlyingTankScript : MonoBehaviour
     private bool wasGrabbed = false;
     private bool destroyed = false;
     private bool isCollided = false;
+    private bool notFalling = true;
     public Transform Target; //set target in script component in unity
     private float dist;
     private float curr_speed;
@@ -39,23 +40,24 @@ public class FlyingTankScript : MonoBehaviour
 
     private void moveTowardTarget()
     {
-        // Move our position a step closer to the target.
-        float step = curr_speed * Time.deltaTime; // calculate distance to move
-        transform.position = Vector3.MoveTowards(transform.position, Target.position, step);
-
-        // Check if the position of the cube and sphere are approximately equal.
-        if (Vector3.Distance(transform.position, Target.position) < 3f || destroyed)
+        if (notFalling)
         {
-            curr_speed = 0.2f;
-        }
-        else curr_speed = speed;
+            // Move our position a step closer to the target.
+            float step = curr_speed * Time.deltaTime; // calculate distance to move
+            transform.position = Vector3.MoveTowards(transform.position, Target.position, step);
 
+            // Check if the position of the cube and sphere are approximately equal.
+            if (Vector3.Distance(transform.position, Target.position) < 3f || destroyed)
+            {
+                curr_speed = 0.2f;
+            }
+            else curr_speed = speed;
+        }
 
         Physics.IgnoreLayerCollision(9, 9, false);
         Physics.IgnoreLayerCollision(9, 0, false);
 
     }
-    // Update is called once per frame
 
 
     private void destroyEnemy()
@@ -79,7 +81,7 @@ public class FlyingTankScript : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 velocity = rb.velocity;
-        float avgVelocity = (velocity.x + velocity.y + velocity.z)/3;
+        float avgVelocity = (velocity.x + velocity.y + velocity.z) / 3;
 
         float deathVelocity = 70;
         if ((velocity.x > deathVelocity || velocity.y > deathVelocity || velocity.z > deathVelocity) && wasGrabbed)
@@ -100,6 +102,21 @@ public class FlyingTankScript : MonoBehaviour
             damageRoutine = c.GetComponent<CastleScript>().StartDamage(1); //change inner number for additional damage
             isCollided = true;
         }
+        if (collision.gameObject.tag == "Floor")
+        {
+
+            Physics.IgnoreCollision(collision.collider, gameObject.GetComponentInChildren<Collider>());
+
+        }
+    }
+
+    public void allowFall()
+    {
+        if (!GameObject.Find("Round Tracker").GetComponent<RoundScript>().space)
+        {
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+            notFalling = false;
+        }
     }
 
     //at end of collission end damage
@@ -117,7 +134,7 @@ public class FlyingTankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 8.0f;
+        speed = 4.0f;
         curr_speed = speed;
         turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
         body = transform.GetChild(0).GetChild(0).transform;
@@ -132,17 +149,13 @@ public class FlyingTankScript : MonoBehaviour
 
         checkVelocity();
         float curr_dist = Vector3.Distance(body.position, Target.position);
-        if ( dist < curr_dist && !wasGrabbed)
+        if ( dist < curr_dist && !wasGrabbed && notFalling)
         {
             StartCoroutine(resetVelocity());
         }
 
         //destroys object if they fall through the ground or get too far from the castle
-        if (gameObject.transform.position.y < -100f)
-        {
-            destroyEnemy();
-        }
-        if (dist > 300)
+        if (gameObject.transform.position.y < -100f || dist > 150)
         {
             destroyEnemy();
         }
@@ -156,6 +169,10 @@ public class FlyingTankScript : MonoBehaviour
             body.Rotate(new Vector3(-90, 60, 0));
         }
 
+        if(GameObject.Find("Round Tracker").GetComponent<RoundScript>().roundchange)
+        {
+            Destroy(gameObject);
+        }
 
 
     }

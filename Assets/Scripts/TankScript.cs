@@ -27,16 +27,6 @@ public class TankScript : MonoBehaviour
         isGrabbed = false;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        speed = 5.0f;
-        curr_speed = speed;
-        turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
-        body = transform.GetChild(0).GetChild(0).transform;
-        Target = GameObject.Find("Tracking Cube").transform;
-    }
-
     private void moveTowardTarget()
     {
         // Move our position a step closer to the target.
@@ -55,28 +45,8 @@ public class TankScript : MonoBehaviour
         Physics.IgnoreLayerCollision(9, 0, false);
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        moveTowardTarget();
 
-        checkVelocity();
-
-        if(gameObject.transform.position.y < -100f)
-        {
-            destroyEnemy();
-        }
-
-        turret.LookAt(Target);
-        turret.Rotate(new Vector3(-90, 90, 0));
-        //turret facement to target
-        if (isGrabbed == false)
-        {
-            body.LookAt(Target.position - transform.position);
-            body.Rotate(new Vector3(-90, 90, 0));
-        }
-    }
-
+   
     private void destroyEnemy()
     {
         GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
@@ -129,5 +99,43 @@ public class TankScript : MonoBehaviour
             isCollided = false;
         }
     }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        speed = 5.0f;
+        curr_speed = speed;
+        turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
+        body = transform.GetChild(0).GetChild(0).transform;
+        Target = GameObject.Find("Tracking Cube").transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        moveTowardTarget();
+
+        checkVelocity();
+
+        if (gameObject.transform.position.y < -100f)
+        {
+            destroyEnemy();
+        }
+
+        turret.LookAt(Target);
+        turret.Rotate(new Vector3(-90, 90, 0));
+        //turret facement to target
+        if (isGrabbed == false)
+        {
+            body.LookAt(Target.position - transform.position);
+            body.Rotate(new Vector3(-90, 90, 0));
+        }
+
+        if (GameObject.Find("Round Tracker").GetComponent<RoundScript>().roundchange)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 }

@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class RoundScript : MonoBehaviour
 {
-    private GameObject roundNumberText, roundCountText, baloon, castle;
-    public GameObject Tank, FlyingTank;
+    private GameObject roundNumberText, roundCountText, castle, ground, 
+                        baloon, castleRockets, rocketFire;
+    private Vector3 castleRocketInitPos;
+    public GameObject Tank, FlyingTank, Missle;
     public GameObject baddies;
     public int roundNumber;
     public int roundCount = 5;
-    private int enemyNumber, enemiesCreated;
+    public int enemyNumber, enemiesCreated;
     public int enemiesLeft = 100;
-    public bool roundchange = false;
+    public bool sky, space, roundchange = false;
     private int counter = 0;
     private bool gameOver = false;
+    public Material skybox, spacebox;
 
 
     //changes what round the castle flies at
     private int FLYINGCASTLE = 2;
-
+    private int SPACECASTLE = 3;
 
 
     public void startMatch()
@@ -29,7 +32,6 @@ public class RoundScript : MonoBehaviour
     //spawns tank
     private void spawnTank()
     {
-        Random.InitState((int)Random.Range(0f, 100f));
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
         float nx = Random.Range(-40f, -70f);
@@ -59,10 +61,9 @@ public class RoundScript : MonoBehaviour
         enemiesCreated++;
     }
 
-    //spawns tank
+    //spawns flying tank
     private void spawnFlyingTank()
     {
-        Random.InitState((int)Random.Range(0f, 100f));
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
         float y = Random.Range(3f, 50f);
@@ -94,9 +95,41 @@ public class RoundScript : MonoBehaviour
         enemiesCreated++;
     }
 
-    // Start is called before the first frame update
+    //spawns missle
+    private void spawnMissle()
+    {
+        float x = Random.Range(40f, 70f);
+        float z = Random.Range(40f, 70f);
+        float y = Random.Range(3f, 50f);
+        float nx = Random.Range(-40f, -70f);
+        float nz = Random.Range(-40f, -70f);
 
-    //changes round
+        switch ((int)Random.Range(1f, 4f))
+        {
+            case 1:
+                Object.Instantiate(Missle, new Vector3(x, y, z), Quaternion.identity, baddies.transform);
+                break;
+
+            case 2:
+                Object.Instantiate(Missle, new Vector3(nx, y, z), Quaternion.identity, baddies.transform);
+                break;
+
+            case 3:
+                Object.Instantiate(Missle, new Vector3(x, y, nz), Quaternion.identity, baddies.transform);
+                break;
+
+            case 4:
+                Object.Instantiate(Missle, new Vector3(nx, y, nz), Quaternion.identity, baddies.transform);
+                break;
+
+
+        }
+
+
+        enemiesCreated++;
+    }
+
+    //transition from one round to next
     IEnumerator roundChange()
     {
         roundCountText.SetActive(true);
@@ -113,9 +146,16 @@ public class RoundScript : MonoBehaviour
             }
             else roundCountText.SetActive(true);
 
-            if (roundNumber == FLYINGCASTLE-1 && roundCount == 5)
+            if (roundNumber == FLYINGCASTLE - 1 && !sky && roundCount == 5)
             {
+                sky = true;
                 CastleFly();
+            }
+            else if (roundNumber == SPACECASTLE - 1 && !space && roundCount == 5)
+            {
+                roundCount = 15;
+                space = true;
+                SpaceCastle();
             }
 
             roundCountText.GetComponent<TextMesh>().text = roundCount.ToString();
@@ -126,6 +166,27 @@ public class RoundScript : MonoBehaviour
         }
     }
 
+    //starts the round officially
+    //creates enemy spawners
+    private void roundStart()
+    {
+        roundchange = false;
+        enemiesCreated = 0;
+        enemyNumber = 1 + roundNumber * 2; // change number of enemies that appear in a round
+        enemiesLeft = enemyNumber;
+
+        //more routines more enimies spawn at once (total number spawned uneffected)
+        //new routine added every 2nd round
+        Coroutine[] spawners = new Coroutine[(int)(roundNumber / 2) + 1];
+        for (int i = 0; i < (int)(roundNumber / 2) + 1; i++)
+        {
+            spawners[i] = StartCoroutine(enemySpawner());
+        }
+
+
+
+    }
+
     //spawns enemies
     //TODO make it so it can spawn more than one kind of enemy
     private IEnumerator enemySpawner()
@@ -133,41 +194,56 @@ public class RoundScript : MonoBehaviour
         while (enemiesCreated < enemyNumber)
         {
 
-            Random.InitState((int)Random.Range(0f, 100f));
             yield return new WaitForSeconds(Random.Range(2f, 7f));
 
-            //uncomment when new enemies are made and the castle flies 
-            //(new enimies will be needed at that point and the tank wouldn't 
-            //make sense flying so it only needs to be until the casle flies)
-            if (roundNumber == FLYINGCASTLE - 1)
+            if (enemiesCreated < enemyNumber)
             {
-                spawnTank();
-            }
-            //else if (roundNumber >= SPACECASTLE)  uncomment when space is added
-            //{
-            //    
-            //}
-            else if (roundNumber >= FLYINGCASTLE)
-            {
-                spawnFlyingTank();
+
+                //add enemies to first for gound enemies
+                //second for space enemies
+                //third for flying enemies
+                if (roundNumber == FLYINGCASTLE - 1)
+                {
+                    spawnTank();
+                }
+                else if (roundNumber >= SPACECASTLE)
+                {
+                    switch((int)Random.Range(1f, 3f))
+                    {
+                        case 1:
+                            spawnFlyingTank();
+                            break;
+
+                        case 2:
+                            spawnMissle();
+                            break;
+
+                        case 3:
+                            break;
+                    }
+
+                }
+                else if (roundNumber >= FLYINGCASTLE)
+                {
+                    switch ((int)Random.Range(1f, 3f))
+                    {
+                        case 1:
+                            spawnFlyingTank();
+                            break;
+
+                        case 2:
+                            spawnMissle();
+                            break;
+
+                        case 3:
+                            break;
+                    }
+                }
             }
         }
     }
 
-    private void roundStart()
-    {
-        enemiesCreated = 0;
-        enemyNumber = 1 + roundNumber * 3; // change number of enemies that appear in a round
-        enemiesLeft = enemyNumber;
 
-        //more routines more enimies spawn at once (total number spawned uneffected)
-        Coroutine[] spawners = new Coroutine[roundNumber];
-        for (int i = 0; i < roundNumber; i++)
-        {
-            spawners[i] = StartCoroutine(enemySpawner());
-        }
-
-    }
 
     //checks for end of round and goes to next round if true
     private bool checkEndRound()
@@ -188,14 +264,30 @@ public class RoundScript : MonoBehaviour
         return false;
     }
 
-
+    //starts castle flying routine
     private void CastleFly()
     {
-        baloon.SetActive(true);
+        StartCoroutine(inflateBaloon());
         growPlayer();
         InvokeRepeating("floating", .2f, .053f);
     }
 
+    //makes balloon appear/grow
+    private IEnumerator inflateBaloon()
+    {
+        baloon.SetActive(true);
+        baloon.transform.GetChild(0).GetComponent<AudioSource>().Play();
+        while (baloon.GetComponent<Transform>().localScale.z <= .000015)
+        {
+            baloon.GetComponent<Transform>().localScale += new Vector3(0f, 0f, .0000002f);
+            yield return new WaitForSeconds(.01f);
+        }
+        StopCoroutine("inflateBaloon");
+
+    }
+
+    //makes castle float
+    //activate with InvokeRepeating("floating", TIMEBEFORESTART, INTERVALTIME)
     private void floating()
     {
         if (counter == 30)
@@ -212,6 +304,8 @@ public class RoundScript : MonoBehaviour
 
     }
 
+    //drops ground until space round
+    //activate with InvokeRepeating("groundDrop", TIMEBEFORESTART, INTERVALTIME)
     private void groundDrop()
     {
         if (counter == 1000)
@@ -220,17 +314,86 @@ public class RoundScript : MonoBehaviour
             CancelInvoke();
         }
         counter++;
-        GameObject.Find("Ground").transform.position += new Vector3(0f, -.2f, 0f);
+        ground.transform.position += new Vector3(0f, -.2f, 0f);
     }
 
     private void growPlayer()
     {
         GameObject.Find("TrackedAlias").transform.localScale = new Vector3(15f, 15f, 15f);
-   
+
+    }
+
+    //starts space castle routine
+    private void SpaceCastle()
+    {
+        castleRockets.SetActive(true);
+
+        StartCoroutine(moveRockets());
+
+    }
+
+    //rockets appear from bottom of castle
+    private IEnumerator moveRockets()
+    {
+        castleRockets.GetComponent<AudioSource>().Play();
+        while(castleRockets.GetComponent<Transform>().localPosition != castleRocketInitPos)
+        {
+
+            castleRockets.GetComponent<Transform>().localPosition -= new Vector3(0f, 0f, .001f);
+            yield return new WaitForSeconds(.1f);
+
+        }
+        castleRockets.GetComponent<AudioSource>().Stop();
+        StartCoroutine(deflateBaloon());
+    }
+
+    //shinks/vanishes balloon
+    private IEnumerator deflateBaloon()
+    {
+        baloon.GetComponent<AudioSource>().Play();
+        while (baloon.GetComponent<Transform>().localScale.z > .000001f)
+        {
+            baloon.GetComponent<Transform>().localScale -= new Vector3(0f, 0f, .00000004f);
+            yield return new WaitForSeconds(.01f);
+        }
+        baloon.SetActive(false);
+        StartCoroutine(startRockets());
+    }
+
+    //makes rockets fire
+    private IEnumerator startRockets()
+    {
+        rocketFire.SetActive(true);
+        GameObject.Find("FireHolder").GetComponent<AudioSource>().Play();
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 1)
+            {
+                CancelInvoke("groundDrop");
+            }
+            if (i == 2)
+            {
+                ground.SetActive(false);
+            }
+            if(i == 3)
+            {
+                roundCountText.GetComponent<TextMesh>().color = new Color(1, 1, 1, 1);
+                roundNumberText.GetComponent<TextMesh>().color = new Color(1, 1, 1, 1);
+                RenderSettings.skybox = spacebox;
+                RenderSettings.fog = false;
+
+            }
+            if(i == 4)
+            {
+                GameObject.Find("FireHolder").GetComponent<AudioSource>().Stop();
+            }
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 
 
+    //game over routine
     public void EndGame()
     {
         roundCountText.SetActive(true);
@@ -239,7 +402,7 @@ public class RoundScript : MonoBehaviour
         gameOver = true;
     }
 
-
+    //starts before first frame
     void Start()
     {
         enemiesLeft = 100;
@@ -251,11 +414,20 @@ public class RoundScript : MonoBehaviour
         roundCount = 5;
 
         castle = GameObject.Find("Castle");
+        ground = GameObject.Find("Ground");
 
         baloon = GameObject.Find("Hot Air Baloon");
         baloon.SetActive(false);
 
+        rocketFire = GameObject.Find("FireHolder");
+        rocketFire.SetActive(false);
 
+        castleRockets = GameObject.Find("Castle Rockets");
+        castleRocketInitPos = castleRockets.GetComponent<Transform>().localPosition;
+        castleRockets.GetComponent<Transform>().localPosition = new Vector3(0, .07f, .032f);
+        castleRockets.SetActive(false);
+
+        //uncomment to seed random
         //Random.InitState(2);
 
     }

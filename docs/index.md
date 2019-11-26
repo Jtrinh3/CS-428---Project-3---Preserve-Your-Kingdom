@@ -10,3 +10,8 @@ Pine Tree - James
 Missile - James
 
 Intro Fanfare - https://freesound.org/people/CGEffex/sounds/99961/
+
+
+#codes
+rigid body volocity - https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html
+Instantiate - https://docs.unity3d.com/ScriptReference/Object.Instantiate.html

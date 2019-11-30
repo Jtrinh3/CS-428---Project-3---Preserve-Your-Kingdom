@@ -124,7 +124,7 @@ public class UFOScript : MonoBehaviour
         if (collision.gameObject.tag == "Castle")
         {
             GameObject c = GameObject.Find("Castle");
-            damageRoutine = c.GetComponent<CastleScript>().StartDamage(1); //change inner number for additional damage
+            damageRoutine = c.GetComponent<CastleScript>().StartDamage(2); //change inner number for additional damage
             isCollided = true;
         }
         if (collision.gameObject.tag == "Floor")

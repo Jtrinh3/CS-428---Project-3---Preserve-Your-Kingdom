@@ -91,7 +91,7 @@ public class MissilesScript: MonoBehaviour
         if (collision.gameObject.tag == "Castle")
         {
             GameObject c = GameObject.Find("Castle");
-            c.GetComponent<CastleScript>().TakeDamage(2); //change inner number for additional damage
+            c.GetComponent<CastleScript>().TakeDamage(4); //change inner number for additional damage
         }
 
         //comment out to disable impact destruction

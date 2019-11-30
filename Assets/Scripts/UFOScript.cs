@@ -18,6 +18,7 @@ public class UFOScript : MonoBehaviour
     private Transform body;
     private Coroutine damageRoutine, velocityReset;
     private int counter = 0;
+    private static int UFONumber = 0;
 
     public void objectIsGrabbed()
     {
@@ -79,6 +80,7 @@ public class UFOScript : MonoBehaviour
     {
         destroyed = true;
         GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
+        UFONumber--;
         Destroy(gameObject);
 
     }
@@ -157,6 +159,13 @@ public class UFOScript : MonoBehaviour
         Target = GameObject.Find("Tracking Cube").transform;
 
         dist = Vector3.Distance(body.position, Target.position);
+        UFONumber++;
+
+        if (UFONumber <= 3)
+        {
+            body.GetComponent<AudioSource>().Play();
+        }
+
     }
 
     void Update()

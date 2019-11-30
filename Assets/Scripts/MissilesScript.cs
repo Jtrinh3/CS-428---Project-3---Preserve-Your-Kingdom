@@ -64,9 +64,9 @@ public class MissilesScript: MonoBehaviour
     {
         soundPlayed = true;
         gameObject.GetComponent<AudioSource>().Play();
+        Destroy(body.gameObject);
         yield return new WaitForSeconds(1f);
-        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
-        Destroy(gameObject);
+        destroyEnemy();
     }
 
     void checkVelocity()
@@ -95,7 +95,8 @@ public class MissilesScript: MonoBehaviour
         }
 
         //comment out to disable impact destruction
-        if(!soundPlayed)    StartCoroutine(breakEnemy());
+        destroyed = true;
+        if (!soundPlayed)    StartCoroutine(breakEnemy());
     }
 
 
@@ -106,7 +107,7 @@ public class MissilesScript: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 8.0f;
+        speed = 15.0f;
         curr_speed = speed;
         body = transform.GetChild(0).GetChild(0).transform;
         Target = GameObject.Find("Tracking Cube").transform;
@@ -117,11 +118,13 @@ public class MissilesScript: MonoBehaviour
     void Update()
     {
         moveTowardTarget();
-
-        float curr_dist = Vector3.Distance(body.position, Target.position);
-        if (dist < curr_dist && !wasGrabbed)
+        if (!destroyed)
         {
-            StartCoroutine(resetVelocity());
+            float curr_dist = Vector3.Distance(body.position, Target.position);
+            if (dist < curr_dist && !wasGrabbed)
+            {
+                StartCoroutine(resetVelocity());
+            }
         }
 
         //destroys object if they fall through the ground or get too far from the castle

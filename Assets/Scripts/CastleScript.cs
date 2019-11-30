@@ -121,7 +121,7 @@ public class CastleScript : MonoBehaviour
         CastleStats.SetActive(false);
         destroyed = false;
 
-        max_hp = 150;
+        max_hp = 100;
         curr_hp = max_hp;
         gold = 0;
 

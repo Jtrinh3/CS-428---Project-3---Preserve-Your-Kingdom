@@ -23,13 +23,13 @@ public class FlyingTankScript : MonoBehaviour
     {
         isGrabbed = true;
         wasGrabbed = true;
-        allowFall();
 
     }
 
     public void objectIsReleased()
     {
         isGrabbed = false;
+        allowFall();
     }
 
     private IEnumerator resetVelocity()
@@ -97,13 +97,16 @@ public class FlyingTankScript : MonoBehaviour
 
     public void allowFall()
     {
+        if (notFalling)
+        {
+            body.gameObject.GetComponent<AudioSource>().Play();
+            transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(false);
+        }
         if (!GameObject.Find("Round Tracker").GetComponent<RoundScript>().space)
         {
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             notFalling = false;
         }
-        body.gameObject.GetComponent<AudioSource>().Play();
-        transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(false);
     }
 
     //if colliding with castle begin damage routine
@@ -138,7 +141,7 @@ public class FlyingTankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 6.0f;
+        speed = 8.0f;
         curr_speed = speed;
         turret = transform.GetChild(0).GetChild(0).GetChild(0).transform;
         body = transform.GetChild(0).GetChild(0).transform;

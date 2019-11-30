@@ -69,8 +69,10 @@ public class TankScript : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 velocity = rb.velocity;
-        float avgVelocity = (velocity.x + velocity.y + velocity.z)/3;
-        if (avgVelocity > 2f && wasGrabbed)
+
+        float deathVelocity = 10;
+        if ((velocity.x > deathVelocity || velocity.y > deathVelocity || velocity.z > deathVelocity) && wasGrabbed)
+        //if(avgVelocity >= 4f && wasGrabbed)
         {
             destroyed = true;
             StartCoroutine(breakEnemy());

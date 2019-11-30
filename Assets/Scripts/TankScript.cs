@@ -58,6 +58,7 @@ public class TankScript : MonoBehaviour
     {
         transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
         transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
+        body.gameObject.GetComponent<AudioSource>().Stop();
 
         yield return new WaitForSeconds(3f);
         GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RoundScript : MonoBehaviour
 {
+    public GameObject Tank, FlyingTank, Missle, UFO, GunUFO;    //list of enemies
+    public GameObject baddies, alienBullet;
     private GameObject roundNumberText, roundCountText, castle, ground, 
                         baloon, castleRockets, rocketFire;
     private Vector3 castleRocketInitPos;
-    public GameObject Tank, FlyingTank, Missle;
-    public GameObject baddies;
     public int roundNumber;
     public int roundCount = 5;
     public int enemyNumber, enemiesCreated;
@@ -29,8 +29,8 @@ public class RoundScript : MonoBehaviour
         StartCoroutine(roundChange());
     }
 
-    //spawns tank
-    private void spawnTank()
+    //spawns enemy for ground rounds
+    private void spawnGroundEnemy(GameObject Enemy)
     {
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
@@ -40,19 +40,19 @@ public class RoundScript : MonoBehaviour
         switch ((int)Random.Range(1f, 4f))
         {
             case 1:
-                Object.Instantiate(Tank, new Vector3(x, 3, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, 3, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 2:
-                Object.Instantiate(Tank, new Vector3(nx, 3, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, 3, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 3:
-                Object.Instantiate(Tank, new Vector3(x, 3, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, 3, nz), Quaternion.identity, baddies.transform);
                 break;
 
             case 4:
-                Object.Instantiate(Tank, new Vector3(nx, 3, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, 3, nz), Quaternion.identity, baddies.transform);
                 break;
 
         }
@@ -61,8 +61,8 @@ public class RoundScript : MonoBehaviour
         enemiesCreated++;
     }
 
-    //spawns flying tank
-    private void spawnFlyingTank()
+    //spawns enemy around castle
+    private void spawnFlyingEnemy(GameObject Enemy)
     {
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
@@ -73,19 +73,19 @@ public class RoundScript : MonoBehaviour
         switch ((int)Random.Range(1f, 4f))
         {
             case 1:
-                Object.Instantiate(FlyingTank, new Vector3(x, y, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, y, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 2:
-                Object.Instantiate(FlyingTank, new Vector3(nx, y, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, y, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 3:
-                Object.Instantiate(FlyingTank, new Vector3(x, y, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, y, nz), Quaternion.identity, baddies.transform);
                 break;
 
             case 4:
-                Object.Instantiate(FlyingTank, new Vector3(nx, y, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, y, nz), Quaternion.identity, baddies.transform);
                 break;
 
 
@@ -95,8 +95,8 @@ public class RoundScript : MonoBehaviour
         enemiesCreated++;
     }
 
-    //spawns missle
-    private void spawnMissle()
+    //spawns enemy around castle, above, and below
+    private void spawnSurroundEnemy(GameObject Enemy)
     {
         float x = Random.Range(40f, 70f);
         float z = Random.Range(40f, 70f);
@@ -107,19 +107,19 @@ public class RoundScript : MonoBehaviour
         switch ((int)Random.Range(1f, 4f))
         {
             case 1:
-                Object.Instantiate(Missle, new Vector3(x, y, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, y, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 2:
-                Object.Instantiate(Missle, new Vector3(nx, y, z), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, y, z), Quaternion.identity, baddies.transform);
                 break;
 
             case 3:
-                Object.Instantiate(Missle, new Vector3(x, y, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(x, y, nz), Quaternion.identity, baddies.transform);
                 break;
 
             case 4:
-                Object.Instantiate(Missle, new Vector3(nx, y, nz), Quaternion.identity, baddies.transform);
+                Object.Instantiate(Enemy, new Vector3(nx, y, nz), Quaternion.identity, baddies.transform);
                 break;
 
 
@@ -204,35 +204,38 @@ public class RoundScript : MonoBehaviour
                 //third for flying enemies
                 if (roundNumber == FLYINGCASTLE - 1)
                 {
-                    spawnTank();
+                    spawnGroundEnemy(Tank);
                 }
                 else if (roundNumber >= SPACECASTLE)
                 {
-                    switch((int)Random.Range(1f, 3f))
+                    switch(((int)Random.Range(0,100) % 4)+1)
                     {
                         case 1:
-                            spawnFlyingTank();
+                            spawnFlyingEnemy(UFO);
                             break;
 
                         case 2:
-                            spawnMissle();
+                            spawnFlyingEnemy(Missle);
                             break;
 
                         case 3:
+                            spawnFlyingEnemy(GunUFO);
+                            break;
+                        case 4:
                             break;
                     }
 
                 }
                 else if (roundNumber >= FLYINGCASTLE)
                 {
-                    switch ((int)Random.Range(1f, 3f))
+                    switch (((int)Random.Range(0, 100) % 3) + 1)
                     {
                         case 1:
-                            spawnFlyingTank();
+                            spawnFlyingEnemy(FlyingTank);
                             break;
 
                         case 2:
-                            spawnMissle();
+                            spawnFlyingEnemy(Missle);
                             break;
 
                         case 3:
@@ -397,7 +400,8 @@ public class RoundScript : MonoBehaviour
     public void EndGame()
     {
         roundCountText.SetActive(true);
-        roundCountText.GetComponent<TextMesh>().fontSize -= 4;
+        roundCountText.transform.localPosition -= new Vector3(0,0,-2);
+        roundCountText.GetComponent<TextMesh>().fontSize -= 8;
         roundCountText.GetComponent<TextMesh>().text = "Game Over";
         gameOver = true;
     }

@@ -9,6 +9,7 @@ public class MissilesScript: MonoBehaviour
     private bool wasGrabbed = false;
     private bool destroyed = false;
     private bool isCollided = false;
+    private bool soundPlayed = false;
     public Transform Target; //set target in script component in unity
     private float dist;
     private float curr_speed;
@@ -61,6 +62,7 @@ public class MissilesScript: MonoBehaviour
 
     public IEnumerator breakEnemy()
     {
+        soundPlayed = true;
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
@@ -93,7 +95,7 @@ public class MissilesScript: MonoBehaviour
         }
 
         //comment out to disable impact destruction
-        StartCoroutine(breakEnemy());
+        if(!soundPlayed)    StartCoroutine(breakEnemy());
     }
 
 

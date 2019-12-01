@@ -17,6 +17,7 @@ public class RoundScript : MonoBehaviour
     private int counter = 0;
     private bool gameOver = false;
     public Material skybox, spacebox;
+    public AudioSource spaceMusic;
 
 
     //changes what round the castle flies at
@@ -228,6 +229,7 @@ public class RoundScript : MonoBehaviour
                 }
                 else if (roundNumber >= FLYINGCASTLE)
                 {
+                    if (roundNumber == FLYINGCASTLE+1) spaceMusic.Play();
                     switch (((int)Random.Range(0, 100) % 3) + 1)
                     {
                         case 1:

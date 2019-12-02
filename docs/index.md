@@ -81,6 +81,9 @@ Similarly to the regular saucer, these saucer has a gun that shoots lasers at yo
 
 ---
 
+## What we learned
+Project two was our main goal that drove us to start this project since Unity didn't seem that bad to work with. We wanted to work on a more coding focus project than project 2 also. During this project, we learned about public declarations for classes so that we can make modules or our own "prefabs" rather than repeat code too often. This greatly sped up developement time and also optimize the program in the sense that it does not need to do a search for the object by name every time. Enemies incorporated this by having a target object to home in on. The item spawner also use this to clone a wand by instantiating whatever object we set it to. Modulating codes definitely takes some effort but saves so much time in the long run.
+
 ## Potential Improvements Planned
 With the timespan we had, we felt we finish a rough skeleton of how the game will be, but we didn't get to implement everything to consider it a complete game as there's a lot of thing room for improvements. Some of the things we wanted to add are listed below.
 

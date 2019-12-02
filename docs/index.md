@@ -188,8 +188,8 @@ Starting below here, will be a list of all assets we used in this project.
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 18  | Rocket Booster & Particles - The Rockets that propel the castle to space with unity particles acting as fire | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/c3ac9865b1a2199097bdb856e43e27d3/Saturn-V-Rocket-Engine-UPDATEv2) |
-| 19  | UFO Saucer - The basic ufo  | Created by James Trinh |
-| 20  | Red Saucer - Description TODO | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/22fe5c33fe2b8b408b700cf351204203/UFO) |
+| 19  | UFO Saucer - The basic UFO  | Created by James Trinh |
+| 20  | Red Saucer - The UFO that shoots at the castle | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/22fe5c33fe2b8b408b700cf351204203/UFO) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Annotation%2010.png" width="80%">
@@ -197,8 +197,8 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 21  | Ground & Sky Skybox - Description TODO | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/sky/colorskies-91541) |
-| 22  | Skybox Space - Description  | [Unity Asset Store](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
+| 21  | Sky Skybox - The skybox for when the castle is in the planet's atmosphere | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/sky/colorskies-91541) |
+| 22  | Space Skybox - A beautiful view of the planet earth for the castle to see in space  | [Unity Asset Store](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
 ### Sounds TODO
 
@@ -207,10 +207,13 @@ Starting below here, will be a list of all assets we used in this project.
 | 1  | Intro Fanfare | [freesound.org](https://freesound.org/people/CGEffex/sounds/99961/) |
 | 2  | Tank Idle  | [freesound.org](https://freesound.org/people/ibirdfilm/sounds/128160/) |
 | 3  | Wand Noise  | Created by James Trinh |
-| 4  | Balloon Inflate | TODO |
-| 5  | Missile Noise  | TODO |
-| 6  | Missile Explosion | TODO |
-| 7  | Tank Balloon Pop | TODO |
-| 8  | Castle Balloon Deflate | TODO |
-| 9  | UFO Sound | TODO |
-| 10 | UFO Laser | TODO |
+| 4  | Balloon Inflate | [SoundDogs](https://retired.sounddogs.com/sound-effects/balloon-inflating-blowing-air-598601) |
+| 5  | Missile and Castle Rocket Noise  | [SoundDogs](https://retired.sounddogs.com/sound-effects/rocket-launch-long-away-430071) |
+| 6  | Missile Explosion | [Zedge](https://www.zedge.net/ringtone/49e70902-e4fc-3544-8dc5-7dfd45228ddc) |
+| 7  | Tank Balloon Pop | [Zedge](https://www.zedge.net/ringtone/a7703113-1f86-3123-a69b-e6ea7f95e363) |
+| 8  | Castle Balloon Deflate | [Zedge](https://www.zedge.net/ringtone/bf690909-1e45-3710-8066-e92fb5ae0398) |
+| 9  | UFO Sound | [Zedge](https://www.zedge.net/ringtone/44f6c701-335a-3fc6-936e-5225d3201f02) |
+| 10 | UFO Laser | [Zedge](https://www.zedge.net/ringtone/eb1aded2-276e-3050-9ded-f8f5a753f54a) |
+| 11 | Engine Moving | [Zedge](https://www.zedge.net/ringtone/b65c58f7-4ae0-37ba-9775-03d2c13ee6dd) |
+| 12 | Fire | [Zedge](https://www.zedge.net/ringtone/9541c810-57ce-31cb-92aa-b30af7414625) |
+

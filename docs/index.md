@@ -13,6 +13,9 @@ As of beta, the game has 3 stages that takes place immediately one after another
 The game has three difficulty as well as a secret dev mode difficulty that can be found to the left of the easy box if the user walks through the wall. Each difficulty applies a different modifier to the damage the enemy deals to the castle, making it so that the castle will fall faster at higher difficulty. This thus leave the user with less room for errors in their decision making and skills.
 
 ## The Castle
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Castle%20Interface.jpg" height="40%">
+</p>
 The castle has a health and a round counter above it so that the user can observe the state of the castle. These counter are dynamic and will change accordingly. The castle will also catch on fire when it is at 0 health.
 
 ## User Interface

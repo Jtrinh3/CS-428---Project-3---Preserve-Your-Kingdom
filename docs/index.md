@@ -201,6 +201,7 @@ Starting below here, will be a list of all assets we used in this project.
 | 22  | Skybox Space - Description  | [website](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
 ### Sounds TODO
+
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 1  | Intro Fanfare | [freesound.org](https://freesound.org/people/CGEffex/sounds/99961/) |
@@ -213,12 +214,3 @@ Starting below here, will be a list of all assets we used in this project.
 | 8  | Castle Balloon Deflate | TODO |
 | 9  | UFO Sound | TODO |
 | 10 | UFO Laser | TODO |
-
-
-Intro Fanfare - https://freesound.org/people/CGEffex/sounds/99961/
-Tank idle - https://freesound.org/people/ibirdfilm/sounds/128160/
-Wand Noise - James
-Missile Noise
-Missile Explosion
-Tank Popping
-

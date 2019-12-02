@@ -1,6 +1,7 @@
 # Project 3 Preserve Your Kingdom
 <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Cover%20Photo.jpg" width="100%">
 
+Weblink: https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/
 
 The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Kingdom* which is available to play on [Kongregate](https://www.kongregate.com/games/zack6723/random-flash-game).
 
@@ -23,14 +24,13 @@ A count down will also appear in front of the user whenever a round is about to 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Wand%20Spawner.jpg" height="30%">
 </p>
-The user can also summon a wand by using the left touch pad to open a spawner menu or the spacebar if using the simulated model. When grabbing the spawner, a wand will spawn in front of them.
+The user can also summon a wand by using the left touch pad to open a spawner menu or the spacebar if using the simulated model. When grabbing the spawner, a wand will spawn in front of them. This UI style is inspired by 3D modeling program and painting program that we saw during the student choice presentation.
 
 ### The wand
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Wand.jpg" width="50%">
 </p>
-The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential.
-
+The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential. Originally, we spent a number of hours researching how to change the grab button or add an additional toggle grab button to no avail. Other games with objects of similar nature utilize the side grab as a toggle grab to positionally orientate the object and then has the trigger button to shoot. Since we were using the trigger button to grab, there didn't seem to be an immediate method to optimally allow the user to shoot while holding the wand.
 
 ## Stages
 The first stage is a ground level where the player can walk around as well as use VRTK's teleport function to move further than their room space. The second stage is when the castle will begin to fly using the power of the hot air balloon. Here, the user is larger and should be able to comfortably walk around the castle to grab enemies. Since tank can't fly, we've attached balloon to the tank in order to keep the tank relevant. After the user beat this stage, the castle's hot air balloon will deflate and it's rocket booster hidden in its tower will reveal itself and we have lift off! In the space stage, the user will still find missiles, but also two different UFO's. These alien have no intention of letting you preserve your kingdom. The stage remains in this space level for the rest of the game. Each of these stages has a different sky box to reflect their enviroment.
@@ -73,7 +73,7 @@ Similarly to the regular saucer, these saucer has a gun that shoots lasers at yo
 ---
 
 ## Potential Improvements Planned
-With the timespan we had, we felt we finish a rough skeleton of how the game will be, but we didn't get to implement everything to consider it a complete game as there's a lot of thing left to be implemented. Some of the things we wanted to add are listed below.
+With the timespan we had, we felt we finish a rough skeleton of how the game will be, but we didn't get to implement everything to consider it a complete game as there's a lot of thing room for improvements. Some of the things we wanted to add are listed below.
 
 * A homerun bat from *Super Smash Bros.* or a gravity hammer from *Halo* equivalent. This would send the enemy flying on contact.
 * Other planets that the user can fly their kingdom to to colonise.
@@ -85,11 +85,11 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 ## Credit:
 Starting below here, will be a list of all assets we used in this project.
 
-### Coding Guide & Sources
+### Guide & Resources used
 | Usage | Resource Link |
 | ----- | ------------- |
 | VRTK v3 | https://github.com/ExtendRealityLtd/VRTK |
-| Particle | https://www.youtube.com/watch?v=agr-QEsYwD0 |
+| Particle Guide | https://www.youtube.com/watch?v=agr-QEsYwD0 |
 | Rigid body velocity | https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html |
 | Instantiate | https://docs.unity3d.com/ScriptReference/Object.Instantiate.html |
 
@@ -101,7 +101,7 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Source |
 | --- | ------------------- | --------------- |
-| 1   | Initial Walls - Description  | [website](link) |
+| 1   | Initial Walls & Ceiling - Description  | [website](link) |
 | 2   | Initial Floor - Description  | [website](link) |
 | 3   | Grass - Description  | [website](link) |
 | 4   | Pine Tree - Scattered throughout the enviroment | Created by James Trinh |

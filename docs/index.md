@@ -6,7 +6,7 @@
 Weblink: [https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/](https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/)
 Project Link: [https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/](https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/)
 
-The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Kingdom* which is available to play on [Kongregate](https://www.kongregate.com/games/zack6723/random-flash-game).
+The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Castle* which is available to play on [Newgrounds](https://www.newgrounds.com/portal/view/102209).
 
 All developmental note below refers to the 11/30/2019 edition of the project.
 
@@ -82,7 +82,7 @@ Similarly to the regular saucer, these saucer has a gun that shoots lasers at yo
 ---
 
 ## What we learned
-Project two was our main goal that drove us to start this project since Unity didn't seem that bad to work with. We wanted to work on a more coding focus project than project 2 also. During this project, we learned about public declarations for classes so that we can make modules or our own "prefabs" rather than repeat code too often. This greatly sped up developement time and also optimize the program in the sense that it does not need to do a search for the object by name every time. Enemies incorporated this by having a target object to home in on. The item spawner also use this to clone a wand by instantiating whatever object we set it to. Modulating codes definitely takes some effort but saves so much time in the long run.
+Project two was our main inspiration that drove us to start this project since Unity didn't seem that bad to work with. We wanted to work on a more coding focus project than project 2 also. During this project, we learned about public declarations for classes so that we can make modules or our own "prefabs" rather than repeat code too often. This greatly sped up developement time and also optimize the program in the sense that it does not need to do a search for the object by name every time. Enemies incorporated this by having a target object to home in on. The item spawner also use this to clone a wand by instantiating whatever object we set it to. Modulating codes definitely takes some effort but saves so much time in the long run.
 
 ## Potential Improvements Planned
 With the timespan we had, we felt we finish a rough skeleton of how the game will be, but we didn't get to implement everything to consider it a complete game as there's a lot of thing room for improvements. Some of the things we wanted to add are listed below.
@@ -91,6 +91,11 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 * Other planets that the user can fly their kingdom to to colonise.
 * More enemy variety
 * Shopping menu to buy upgrade between rounds. The idea was to have the castle upgrade be a surprise option.
+
+There were also a few under the hood changes that we wanted to make such as:
+
+* Making an EnemyScript interface for easier creation of new enemies
+* Having difficulty effect the amount of rounds played in each setting (ground, sky, space)
 
 ---
 
@@ -200,7 +205,7 @@ Starting below here, will be a list of all assets we used in this project.
 | 21  | Sky Skybox - The skybox for when the castle is in the planet's atmosphere | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/sky/colorskies-91541) |
 | 22  | Space Skybox - A beautiful view of the planet earth for the castle to see in space  | [Unity Asset Store](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
-### Sounds TODO
+### Sounds
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |

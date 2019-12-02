@@ -48,31 +48,31 @@ The first stage is a ground level where the player can walk around as well as us
 ## Type of enemies
 As of this writing, there are five different enemies: tank, flying tank, missile, saucer, and red saucers which are all explained below.
 
-## Tank
+### Tank
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e1.jpg" width="50%">
 </p>
 The tank is a ground vehicle that's job is to turn the castle into rubble. The tank model is made by James Trinh on Blender and is actually compose of two seperate model: the turret and the body. The tank is program to constantly move towards the modular targeting object that we choose, in which case is an invisible cube inside the castle. Upon arriving a certain distant from the castle, the tank will stop and damage the castle's health. The tank also has a turret that constantly face the targeting object as well. While programming this function, the tank wasn't always facing the right direction since it considered forward on its side so we had to manually correct it by doing some vector arithmetic.
 
-## Flying Tank TODO?
+### Flying Tank TODO?
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e2.jpg" width="50%">
 </p>
 What happens when you add a balloon to a 50 ton siege machine? You get a flying machine! This tank can be popped by grabbing and tossing it aside. The flying tank is pretty much the tank but with a balloon. Upon releasing the tank, the balloon will pop and emmit a sound that's audible to the player.
 
-## Missile
+### Missile
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e3.jpg" width="50%">
 </p>
 The missile model was originally going to be an airplane but it felt inappropriate to have kamikaziing airplanes so we made it a large rocket instead. Similarly to the tank, the missile fly towards the castle facing it all the time. The missile emit a sound that is clearly audiable as well as an explosion upon impact or getting stopped by the player. The particle trail was created by modifying unity's default particle system so that it has different color base on it's time life and spread to only behind it. We kept the particle count low to reduce potential performance impact. The model was created using blender by James.
 
-## Saucer
+### Saucer
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e4.jpg" width="50%">
 </p>
 Aliens from another planet are not happy with your kingdom! They came light years away to end your reign! These ships ram your castle and are quite durable! To defeat them, you must toss them back to their home planet from wence they came! The model is created by James using Blender.
 
-## Red Saucer TODO
+### Red Saucer TODO
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e5.jpg" width="50%">
 </p>
@@ -93,7 +93,7 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 ## Credit:
 Starting below here, will be a list of all assets we used in this project.
 
-## Guide & Resources used
+### Guide & Resources used
 | Usage | Resource Link |
 | ----- | ------------- |
 | VRTK v3 | https://github.com/ExtendRealityLtd/VRTK |
@@ -101,7 +101,7 @@ Starting below here, will be a list of all assets we used in this project.
 | Rigid body velocity | https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html |
 | Instantiate | https://docs.unity3d.com/ScriptReference/Object.Instantiate.html |
 
-## Models, Textures, & Particles TODO
+### Models, Textures, & Particles TODO
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%201.jpg" width="80%">
@@ -207,7 +207,7 @@ Snow Tree - https://free3d.com/3d-model/low-poly-snowy-tree-134146.html
 Big Foot Model - https://free3d.com/3d-model/bigfoot-v1--814637.html
 Space Skybox - https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752
 
-## Sounds
+### Sounds TODO
 Intro Fanfare - https://freesound.org/people/CGEffex/sounds/99961/
 Tank idle - https://freesound.org/people/ibirdfilm/sounds/128160/
 Wand Noise - James

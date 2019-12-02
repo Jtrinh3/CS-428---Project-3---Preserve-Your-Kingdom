@@ -1,5 +1,7 @@
 # Project 3 Preserve Your Kingdom
+<p float="center">
 <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Cover%20Photo.jpg" width="100%">
+</p>
 
 Weblink: https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/
 
@@ -33,6 +35,9 @@ The user can also summon a wand by using the left touch pad to open a spawner me
 The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential. Originally, we spent a number of hours researching how to change the grab button or add an additional toggle grab button to no avail. Other games with objects of similar nature utilize the side grab as a toggle grab to positionally orientate the object and then has the trigger button to shoot. Since we were using the trigger button to grab, there didn't seem to be an immediate method to optimally allow the user to shoot while holding the wand.
 
 ## Stages
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Stages.png" height="66%">
+</p>
 The first stage is a ground level where the player can walk around as well as use VRTK's teleport function to move further than their room space. The second stage is when the castle will begin to fly using the power of the hot air balloon. Here, the user is larger and should be able to comfortably walk around the castle to grab enemies. Since tank can't fly, we've attached balloon to the tank in order to keep the tank relevant. After the user beat this stage, the castle's hot air balloon will deflate and it's rocket booster hidden in its tower will reveal itself and we have lift off! In the space stage, the user will still find missiles, but also two different UFO's. These alien have no intention of letting you preserve your kingdom. The stage remains in this space level for the rest of the game. Each of these stages has a different sky box to reflect their enviroment.
 
 --- 

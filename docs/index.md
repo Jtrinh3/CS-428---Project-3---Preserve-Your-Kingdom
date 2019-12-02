@@ -94,6 +94,7 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 Starting below here, will be a list of all assets we used in this project.
 
 ### Guide & Resources used
+
 | Usage | Resource Link |
 | ----- | ------------- |
 | VRTK v3 | https://github.com/ExtendRealityLtd/VRTK |

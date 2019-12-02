@@ -4,6 +4,7 @@
 </p>
 
 Weblink: [https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/](https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/)
+Project Link: [https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/](https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/)
 
 The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Kingdom* which is available to play on [Kongregate](https://www.kongregate.com/games/zack6723/random-flash-game).
 

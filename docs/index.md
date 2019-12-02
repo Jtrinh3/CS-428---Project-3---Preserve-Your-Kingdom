@@ -70,7 +70,6 @@ Starting below here, will be a list of all assets we used in this project.
 
 ### Models, Textures, & Particles TODO
 
-Annotation 1 photo
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%201.jpg" width="80%">
 </p>
@@ -98,8 +97,8 @@ Annotation 1 photo
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 8   | Farm - Description  | [website](link) |
-| 9   | Mountain - Description  | [website](link) |
+| 8   | Farm - Use to add to scenary in the distance  | [sketchfab.com](https://sketchfab.com/3d-models/low-poly-farm-4ee929f6f461470f9e97f8f0e5c004e1) |
+| 9   | Mountain - Use to add to scenary in the distance  | [free3d.com](https://free3d.com/3d-model/mountain-low-poly-mount1-41534.html) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%204.jpg" width="80%">
@@ -107,8 +106,8 @@ Annotation 1 photo
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 10  | Wand - Description  | Created by James Trinh |
-| 11  | HTC Vive Controller - Description  | [VRTK](https://github.com/ExtendRealityLtd/VRTK) |
+| 10  | Wand - Can be spawned by the wand spawner. It's particle is also made by the same creator. | Created by James Trinh |
+| 11  | HTC Vive Controller - Came with VRTK  | [VRTK](https://github.com/ExtendRealityLtd/VRTK) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%205.jpg" height="50%">
@@ -116,7 +115,7 @@ Annotation 1 photo
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 12  | Sasquach - Description  | [website](link) |
+| 12  | Sasquach - A little easter egg hidden in the distant mountain  | [free3d.com](https://free3d.com/3d-model/bigfoot-v1--814637.html) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%206.jpg" width="80%">

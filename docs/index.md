@@ -71,6 +71,9 @@ Starting below here, will be a list of all assets we used in this project.
 ### Models, Textures, & Particles TODO
 
 Annotation 1 photo
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%201.jpg" width="80%">
+</p>
 
 | Number | Item | Source |
 | --- | ------------------- | --------------- |
@@ -80,40 +83,52 @@ Annotation 1 photo
 | 4   | Pine Tree - Scattered throughout the enviroment | Created by James Trinh |
 | 5   | Snowy Tree - Scatter further out towards the mountains | [website](link) |
 
-Annotation 2 photo
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%202.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 6   | Name - Description  | [website](link) |
 | 7   | Name - Description  | [website](link) |
 
-Annotation 3 photo
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%203.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 8   | Farm - Description  | [website](link) |
 | 9   | Mountain - Description  | [website](link) |
 
-Annotation 4 photo
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%204.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 10  | Wand - Description  | Created by James Trinh |
 | 11  | HTC Vive Controller - Description  | [VRTK](https://github.com/ExtendRealityLtd/VRTK) |
 
-Annotation 5 Photo
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%205.jpg" height="50%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 12  | Sasquach - Description  | [website](link) |
 
-Annotation 6
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%206.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 13  | Name - Description  | [website](link) |
 
-Annotation 7
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%207.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
@@ -121,13 +136,17 @@ Annotation 7
 | 15  | Missile - Missile model for the enemy missile  | Created by James Trinh |
 | 16  | Balloon - Description  | [website](link) |
 
-Annotation 8
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%208.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
 | 17  | Flying Tank - Description  | Tank part created by James Trinh TODO |
 
-Annotation 9
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%209.jpg" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
@@ -135,7 +154,9 @@ Annotation 9
 | 19  | Name - Description  | [website](link) |
 | 20  | Name - Description  | [website](link) |
 
-Annotation 10
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Annotation%2010.png" width="80%">
+</p>
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |

@@ -95,7 +95,7 @@ Starting below here, will be a list of all assets we used in this project.
 
 ### Guide & Resources used
 
-| Usage | Resource Link |
+| Name | Resource Link |
 | ----- | ------------- |
 | VRTK v3 | https://github.com/ExtendRealityLtd/VRTK |
 | Particle Guide | https://www.youtube.com/watch?v=agr-QEsYwD0 |
@@ -110,11 +110,11 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Source |
 | --- | ------------------- | --------------- |
-| 1   | Initial Walls & Ceiling - Description  | [website](link) |
-| 2   | Initial Floor - Description  | [website](link) |
-| 3   | Grass - Description  | [website](link) |
+| 1   | Initial Walls & Ceiling - Description TODO | [website](link) |
+| 2   | Initial Floor - Description TODO | [website](link) |
+| 3   | Grass - Description TODO | [website](link) |
 | 4   | Pine Tree - Scattered throughout the enviroment | Created by James Trinh |
-| 5   | Snowy Tree - Scatter further out towards the mountains | [website](link) |
+| 5   | Snowy Tree - Scatter further out towards the mountains | [free3d.com](https://free3d.com/3d-model/low-poly-snowy-tree-134146.html) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%202.jpg" width="80%">
@@ -122,8 +122,8 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 6   | Name - Description  | [website](link) |
-| 7   | Name - Description  | [website](link) |
+| 6   | Castle - The castle that the player defend  | Created by James Trinh |
+| 7   | Flags - The 4 flags above the castle  | [turbosquid.com](https://www.turbosquid.com/3d-models/free-max-model-flags-games/756168) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%203.jpg" width="80%">
@@ -157,7 +157,7 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 13  | Name - Description  | [website](link) |
+| 13  | Tank - A tank body & turret  | Created by James Trinh |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%207.jpg" width="80%">
@@ -167,7 +167,7 @@ Starting below here, will be a list of all assets we used in this project.
 | --- | ------------------- | --------------- |
 | 14  | Missile Trail - Particle for the missile  | Created by James using Unity's default sprite |
 | 15  | Missile - Missile model for the enemy missile  | Created by James Trinh |
-| 16  | Balloon - Description  | [website](link) |
+| 16  | Balloon - Description TODO | [website](link) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%208.jpg" width="80%">
@@ -183,9 +183,9 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 18  | Name - Description  | [website](link) |
-| 19  | Name - Description  | [website](link) |
-| 20  | Name - Description  | [website](link) |
+| 18  | Rocket Booster & Particles - Description TODO | [website](link) |
+| 19  | UFO Saucer - The basic ufo  | Created by James Trinh |
+| 20  | Red Saucer - Description TODO | [website](link) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Annotation%2010.png" width="80%">
@@ -193,22 +193,24 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 21  | Skybox - Description  | [website](link) |
+| 21  | Ground & Sky Skybox - Description TODO | [website](link) |
 | 22  | Skybox Space - Description  | [website](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
-Missile Trail Particle - James
-Tank - James
-Castle - James
-Pine Tree - James
-Missile - James
-Low Poly Mountain - https://free3d.com/3d-model/mountain-low-poly-mount1-41534.html
-flag - https://www.turbosquid.com/3d-models/free-max-model-flags-games/756168
-farm - https://sketchfab.com/3d-models/low-poly-farm-4ee929f6f461470f9e97f8f0e5c004e1
-Snow Tree - https://free3d.com/3d-model/low-poly-snowy-tree-134146.html
-Big Foot Model - https://free3d.com/3d-model/bigfoot-v1--814637.html
-Space Skybox - https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752
-
 ### Sounds TODO
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 1  | Intro Fanfare | [freesound.org](https://freesound.org/people/CGEffex/sounds/99961/) |
+| 2  | Tank Idle  | [freesound.org](https://freesound.org/people/ibirdfilm/sounds/128160/) |
+| 3  | Wand Noise  | Created by James Trinh |
+| 4  | Balloon Inflate | TODO |
+| 5  | Missile Noise  | TODO |
+| 6  | Missile Explosion | TODO |
+| 7  | Tank Balloon Pop | TODO |
+| 8  | Castle Balloon Deflate | TODO |
+| 9  | UFO Sound | TODO |
+| 10 | UFO Laser | TODO |
+
+
 Intro Fanfare - https://freesound.org/people/CGEffex/sounds/99961/
 Tank idle - https://freesound.org/people/ibirdfilm/sounds/128160/
 Wand Noise - James

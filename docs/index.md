@@ -3,12 +3,30 @@
 <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Cover%20Photo.jpg" width="100%">
 </p>
 
-Weblink: [https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/](https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/)
+Weblink: [https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/](https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/)  
 Project Link: [https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/](https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/)
 
 The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Castle* which is available to play on [Newgrounds](https://www.newgrounds.com/portal/view/102209).
 
 All developmental note below refers to the 11/30/2019 edition of the project.
+
+## How to use
+**Loading & running the project:**
+1. Clone from git to an empty folder.  
+  1a. git clone https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/
+2. Clone VRTK in a seperate folder using the following commands  
+  2a. git clone --recurse-submodules https://github.com/ExtendRealityLtd/VRTK.git  
+  2b. cd VRTK/  
+  2c. git checkout 29d098ce511e9c18a189327b74029b193d6011a9  
+  2d. git submodule init && git submodule update  
+3. Move VRTK folder into Assets folder of main project
+4. Start up Unity Hub and add the project folder from the previous step to it.
+5. Set the version to 2019.2.8f1
+6. Launch the project
+7. Decide whether you have your own VR or use a simulated one.
+  a. **Simulated rig**: Skip to step 8
+  b. **VR Device**: On the lefthand Hierarchy chart, click on *UnityXRCameraRig* and toggle the checkbox on the righthand side towards to top left of the textbox with *UnityXRCameraRig* in it.
+8. Run the project with the play button.
 
 ## What can you do in this game?
 As of beta, the game has 3 stages that takes place immediately one after another. The user can throw tanks to destroy them as well as the balloon variant, grab missiles to bust them, and yeet saucers back to their home planet. Once the user reach the space stage, the game will go on endlessly at that stage. The user can also spawn a wand to aid them in battle.

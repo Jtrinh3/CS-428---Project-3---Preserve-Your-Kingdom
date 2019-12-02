@@ -16,9 +16,16 @@ The game has three difficulty as well as a secret dev mode difficulty that can b
 The castle has a health and a round counter above it so that the user can observe the state of the castle. These counter are dynamic and will change accordingly. The castle will also catch on fire when it is at 0 health.
 
 ## User Interface
-A count down will also appear in front of the user whenever a round is about to begin. If the user loses, a game over message is displayed. The user can also summon a wand by using the left touch pad to open a spawner menu or the spacebar if using the simulated model. When grabbing the spawner, a wand will spawn in front of them.
+A count down will also appear in front of the user whenever a round is about to begin. If the user loses, a game over message is displayed.
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Wand%20Spawner.jpg" height="30%">
+</p>
+The user can also summon a wand by using the left touch pad to open a spawner menu or the spacebar if using the simulated model. When grabbing the spawner, a wand will spawn in front of them.
 
 ### The wand
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Wand.jpg" width="50%">
+</p>
 The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential.
 
 

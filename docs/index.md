@@ -46,7 +46,7 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 * A homerun bat from *Super Smash Bros.* or a gravity hammer from *Halo* equivalent. This would send the enemy flying on contact.
 * Other planets that the user can fly their kingdom to to colonise.
 * More enemy variety
-* Shopping menu to buy upgrade between rounds.
+* Shopping menu to buy upgrade between rounds. The idea was to have the castle upgrade be a surprise option.
 
 ---
 
@@ -54,14 +54,17 @@ With the timespan we had, we felt we finish a rough skeleton of how the game wil
 Starting below here, will be a list of all assets we used in this project.
 
 ### Coding Guide & Sources
-https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752
-VRTK - (TODO)
+
+VRTK v3 - https://github.com/ExtendRealityLtd/VRTK
 Particle - https://www.youtube.com/watch?v=agr-QEsYwD0
+rigid body volocity - https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html
+Instantiate - https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
 
 ### Models, Textures, & Effects
 | Number | Item | Credit |
 | ------ | ---- | ------ |
 | We     | are  | cool   |
+| 1     | are  | cool   |
 
 Missile Trail Particle - James
 Tank - James
@@ -73,12 +76,13 @@ flag - https://www.turbosquid.com/3d-models/free-max-model-flags-games/756168
 farm - https://sketchfab.com/3d-models/low-poly-farm-4ee929f6f461470f9e97f8f0e5c004e1
 Snow Tree - https://free3d.com/3d-model/low-poly-snowy-tree-134146.html
 Big Foot Model - https://free3d.com/3d-model/bigfoot-v1--814637.html
+Space Skybox - https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752
 
 ### Sounds
 Intro Fanfare - https://freesound.org/people/CGEffex/sounds/99961/
 Tank idle - https://freesound.org/people/ibirdfilm/sounds/128160/
+Wand Noise - James
+Missile Noise
+Missile Explosion
+Tank Popping
 
-
-#codes
-rigid body volocity - https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html
-Instantiate - https://docs.unity3d.com/ScriptReference/Object.Instantiate.html

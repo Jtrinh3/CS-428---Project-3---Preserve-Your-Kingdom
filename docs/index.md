@@ -69,13 +69,13 @@ Starting below here, will be a list of all assets we used in this project.
 
 Annotation 1 photo
 
-| Number | Item | Credit |
+| Number | Item | Source |
 | --- | ------------------- | --------------- |
-| 1   | Name - Description  | [website](link) |
-| 2   | Name - Description  | [website](link) |
-| 3   | Name - Description  | [website](link) |
-| 4   | Name - Description  | [website](link) |
-| 5   | Name - Description  | [website](link) |
+| 1   | Initial Walls - Description  | [website](link) |
+| 2   | Initial Floor - Description  | [website](link) |
+| 3   | Grass - Description  | [website](link) |
+| 4   | Pine Tree - Scattered throughout the enviroment | Created by James Trinh |
+| 5   | Snowy Tree - Scatter further out towards the mountains | [website](link) |
 
 Annotation 2 photo
 
@@ -83,6 +83,61 @@ Annotation 2 photo
 | --- | ------------------- | --------------- |
 | 6   | Name - Description  | [website](link) |
 | 7   | Name - Description  | [website](link) |
+
+Annotation 3 photo
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 8   | Farm - Description  | [website](link) |
+| 9   | Mountain - Description  | [website](link) |
+
+Annotation 4 photo
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 10  | Wand - Description  | Created by James Trinh |
+| 11  | HTC Vive Controller - Description  | [VRTK](https://github.com/ExtendRealityLtd/VRTK) |
+
+Annotation 5 Photo
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 12  | Sasquach - Description  | [website](link) |
+
+Annotation 6
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 13  | Name - Description  | [website](link) |
+
+Annotation 7
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 14  | Missile Trail - Particle for the missile  | Created by James using Unity's default sprite |
+| 15  | Missile - Missile model for the enemy missile  | Created by James Trinh |
+| 16  | Balloon - Description  | [website](link) |
+
+Annotation 8
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 17  | Flying Tank - Description  | Tank part created by James Trinh TODO |
+
+Annotation 9
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 18  | Name - Description  | [website](link) |
+| 19  | Name - Description  | [website](link) |
+| 20  | Name - Description  | [website](link) |
+
+Annotation 10
+
+| Number | Item | Credit |
+| --- | ------------------- | --------------- |
+| 21  | Skybox - Description  | [website](link) |
+| 22  | Skybox Space - Description  | [website](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
 Missile Trail Particle - James
 Tank - James

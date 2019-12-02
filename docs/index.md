@@ -11,7 +11,7 @@ The idea of this project is to create a game where the user defend their castle 
 All developmental note below refers to the 11/30/2019 edition of the project.
 
 ## What can you do in this game?
-As of beta, the game has 3 stages that takes place immediately one after another. The user can throw tanks to destroy them as well as the balloon variant, grab missiles to bust them, and yeet saucers back to their home planet. Once the user reach the space stage, the game will go on endlessly at that stage.
+As of beta, the game has 3 stages that takes place immediately one after another. The user can throw tanks to destroy them as well as the balloon variant, grab missiles to bust them, and yeet saucers back to their home planet. Once the user reach the space stage, the game will go on endlessly at that stage. The user can also spawn a wand to aid them in battle.
 
 ## Difficulty
 <p float="center">

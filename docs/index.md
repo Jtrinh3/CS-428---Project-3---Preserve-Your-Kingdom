@@ -55,11 +55,11 @@ As of this writing, there are five different enemies: tank, flying tank, missile
 </p>
 The tank is a ground vehicle that's job is to turn the castle into rubble. The tank model is made by James Trinh on Blender and is actually compose of two seperate model: the turret and the body. The tank is program to constantly move towards the modular targeting object that we choose, in which case is an invisible cube inside the castle. Upon arriving a certain distant from the castle, the tank will stop and damage the castle's health. The tank also has a turret that constantly face the targeting object as well. While programming this function, the tank wasn't always facing the right direction since it considered forward on its side so we had to manually correct it by doing some vector arithmetic.
 
-### Flying Tank TODO?
+### Flying Tank
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e2.jpg" width="50%">
 </p>
-What happens when you add a balloon to a 50 ton siege machine? You get a flying machine! This tank can be popped by grabbing and tossing it aside. The flying tank is pretty much the tank but with a balloon. Upon releasing the tank, the balloon will pop and emmit a sound that's audible to the player.
+What happens when you add a balloon to a 50 ton siege machine? You get a flying machine! This tank can be popped by grabbing and tossing it aside. The flying tank is pretty much the tank but with a balloon. Upon releasing the tank, the balloon will pop and emmit a sound that's audible to the player. Balloon model created by Helene H. from the sketchup 3d warehouse.
 
 ### Missile
 <p float="center">
@@ -73,11 +73,11 @@ The missile model was originally going to be an airplane but it felt inappropria
 </p>
 Aliens from another planet are not happy with your kingdom! They came light years away to end your reign! These ships ram your castle and are quite durable! To defeat them, you must toss them back to their home planet from wence they came! The model is created by James using Blender.
 
-### Red Saucer TODO
+### Red Saucer
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/e5.jpg" width="50%">
 </p>
-Similarly to the regular saucer, these saucer has a gun that shoots lasers at your castle. They can damage your castle from a further distance so be on guard!
+Similarly to the regular saucer, these saucer has a gun that shoots lasers at your castle. They can damage your castle from a further distance so be on guard! The model was created by P.Handover from the sketchup 3d warehouse
 
 ---
 
@@ -114,9 +114,9 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Source |
 | --- | ------------------- | --------------- |
-| 1   | Initial Walls & Ceiling - Description TODO | [website](link) |
-| 2   | Initial Floor - Description TODO | [website](link) |
-| 3   | Grass - Description TODO | [website](link) |
+| 1   | Initial Walls & Ceiling - Used for the difficulty setting room | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/stone/dungeon-stone-textures-66487) |
+| 2   | Initial Floor - Used for the difficulty setting room | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/stone/dungeon-stone-textures-66487) |
+| 3   | Grass - The grass on the Castle's home planet | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153) |
 | 4   | Pine Tree - Scattered throughout the enviroment | Created by James Trinh |
 | 5   | Snowy Tree - Scatter further out towards the mountains | [free3d.com](https://free3d.com/3d-model/low-poly-snowy-tree-134146.html) |
 
@@ -171,7 +171,7 @@ Starting below here, will be a list of all assets we used in this project.
 | --- | ------------------- | --------------- |
 | 14  | Missile Trail - Particle for the missile  | Created by James using Unity's default sprite |
 | 15  | Missile - Missile model for the enemy missile  | Created by James Trinh |
-| 16  | Balloon - Description TODO | [website](link) |
+| 16  | Balloon - The visual to explain how the castle flies into the sky | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/7cfb4b02ff474646a3b49659a35d89f9/Hot-air-baloon-15-min) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%208.jpg" width="80%">
@@ -179,7 +179,7 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 17  | Flying Tank - Description  | Tank part created by James Trinh TODO |
+| 17  | Flying Tank - A tank attatched to a balloon  | Tank created by James Trinh - [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/488c8c47-d380-4dfc-87ec-83ccd6b05339/Balloon) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/annotation%209.jpg" width="80%">
@@ -187,9 +187,9 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 18  | Rocket Booster & Particles - Description TODO | [website](link) |
+| 18  | Rocket Booster & Particles - The Rockets that propel the castle to space with unity particles acting as fire | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/c3ac9865b1a2199097bdb856e43e27d3/Saturn-V-Rocket-Engine-UPDATEv2) |
 | 19  | UFO Saucer - The basic ufo  | Created by James Trinh |
-| 20  | Red Saucer - Description TODO | [website](link) |
+| 20  | Red Saucer - Description TODO | [Sketchup 3d Warehouse](https://3dwarehouse.sketchup.com/model/22fe5c33fe2b8b408b700cf351204203/UFO) |
 
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Annotation%2010.png" width="80%">
@@ -197,8 +197,8 @@ Starting below here, will be a list of all assets we used in this project.
 
 | Number | Item | Credit |
 | --- | ------------------- | --------------- |
-| 21  | Ground & Sky Skybox - Description TODO | [website](link) |
-| 22  | Skybox Space - Description  | [website](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
+| 21  | Ground & Sky Skybox - Description TODO | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/sky/colorskies-91541) |
+| 22  | Skybox Space - Description  | [Unity Asset Store](https://assetstore.unity.com/detail/2d/textures-materials/sky/earth-planets-skyboxes-53752) |
 
 ### Sounds TODO
 

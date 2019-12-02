@@ -13,6 +13,8 @@ All developmental note below refers to the 11/30/2019 edition of the project.
 As of beta, the game has 3 stages that takes place immediately one after another. The user can throw tanks to destroy them as well as the balloon variant, grab missiles to bust them, and yeet saucers back to their home planet. Once the user reach the space stage, the game will go on endlessly at that stage.
 
 ## Difficulty
+<p float="center">
+  <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/difficulty.jpg" height="40%"
 The game has three difficulty as well as a secret dev mode difficulty that can be found to the left of the easy box if the user walks through the wall. Each difficulty applies a different modifier to the damage the enemy deals to the castle, making it so that the castle will fall faster at higher difficulty. This thus leave the user with less room for errors in their decision making and skills.
 
 ## The Castle
@@ -32,7 +34,7 @@ The user can also summon a wand by using the left touch pad to open a spawner me
 <p float="center">
   <img src="https://raw.githubusercontent.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/master/docs/Proj%203%20Annotations/Wand.jpg" width="50%">
 </p>
-The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential. Originally, we spent a number of hours researching how to change the grab button or add an additional toggle grab button to no avail. Other games with objects of similar nature utilize the side grab as a toggle grab to positionally orientate the object and then has the trigger button to shoot. Since we were using the trigger button to grab, there didn't seem to be an immediate method to optimally allow the user to shoot while holding the wand.
+The wand is a weapon of magic wielded by wizards of all of fantasy, and in D&D campaigns. The wand was coded so that upon grabbing it, the wand will shoot a bolt of kinetic energy that pushes the vehicle it touches back. The bolt is a ball that has a particle trail on it that lingers a little while before dissapearing. Since it activate on grab, the user has to do cool hand tricks to utilize it to its full potential. Originally, we spent a number of hours looking for how to change the grab button or add an additional toggle grab button with VRTK to no avail. Other games with objects of similar nature utilize the side grab as a toggle grab with orientation hold and then has the trigger button to activate or use the object. Since we were using the trigger button to grab, there didn't seem to be an immediate method to optimally allow the user to shoot while holding the wand.
 
 ## Stages
 <p float="center">

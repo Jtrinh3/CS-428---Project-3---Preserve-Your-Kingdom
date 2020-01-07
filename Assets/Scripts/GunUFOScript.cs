@@ -2,27 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunUFOScript : MonoBehaviour
+public class GunUFOScript : EnemyScript
 {
     //static variables are shared between game objects
-    private bool isGrabbed = false;
-    private bool wasGrabbed = false;
-    private bool destroyed = false;
-    private bool isCollided = false;
-    private bool notFalling = true;
-    private bool attacking = false;
-    public Transform Target; //set target in script component in unity
-    private float dist;
-    private float curr_speed;
-    private float speed;
-    private Transform turret;
-    private Transform body;
-    private Coroutine damageRoutine = null;
-    private Coroutine velocityReset;
-    private int counter = 0;
+    protected bool notFalling = true;
+    protected bool attacking = false;
+    protected float dist;
+    protected Transform turret;
+    protected Coroutine velocityReset;
+    protected int counter = 0;
     public static GameObject bullet = null;
 
-    public void objectIsGrabbed()
+    public override void objectIsGrabbed()
     {
         isGrabbed = true;
         wasGrabbed = true;
@@ -32,13 +23,13 @@ public class GunUFOScript : MonoBehaviour
         //StartCoroutine(breakEnemy());
     }
 
-    public void objectIsReleased()
+    public override void objectIsReleased()
     {
         isGrabbed = false;
         StartCoroutine(resetVelocity());
     }
 
-    private IEnumerator resetVelocity()
+    protected IEnumerator resetVelocity()
     {
         checkVelocity();
         yield return new WaitForSeconds(1f);
@@ -48,7 +39,7 @@ public class GunUFOScript : MonoBehaviour
 
 
 
-    private void moveTowardTarget()
+    protected override void moveTowardTarget()
     {
         if (notFalling)
         {
@@ -84,7 +75,7 @@ public class GunUFOScript : MonoBehaviour
 
     }
 
-    private IEnumerator attack()
+    protected IEnumerator attack()
     {
         while (true)
         {
@@ -94,22 +85,16 @@ public class GunUFOScript : MonoBehaviour
         }
     }
 
-    private void destroyEnemy()
-    {
-        destroyed = true;
-        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
-        Destroy(gameObject);
 
-    }
 
-    public IEnumerator breakEnemy()
+    public override IEnumerator breakEnemy()
     {
         yield return new WaitForSeconds(.2f);
         if (!destroyed)
             destroyEnemy();
     }
 
-    void checkVelocity()
+    protected override void checkVelocity()
     {
         Vector3 velocity = gameObject.GetComponent<Rigidbody>().velocity;
         float deathVelocity = 20;
@@ -133,13 +118,16 @@ public class GunUFOScript : MonoBehaviour
     }
 
     //if colliding with castle begin damage routine
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Castle")
         {
-            GameObject c = GameObject.Find("Castle");
-            damageRoutine = c.GetComponent<CastleScript>().StartDamage(1); //change inner number for additional damage
-            isCollided = true;
+            if (damageRoutine == null)
+            {
+                GameObject c = GameObject.Find("Castle");
+                damageRoutine = c.GetComponent<CastleScript>().StartDamage(1); //change inner number for additional damage
+                isCollided = true;
+            }
         }
         if (collision.gameObject.tag == "Floor")
         {
@@ -149,20 +137,9 @@ public class GunUFOScript : MonoBehaviour
         }
     }
 
-    //at end of collission end damage
-    private void OnCollisionExit(Collision collision)
-    {
-
-        if (collision.gameObject.tag == "Castle")
-        {
-            GameObject c = GameObject.Find("Castle");
-            c.GetComponent<CastleScript>().EndDamage(damageRoutine);
-            isCollided = false;
-        }
-    }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         speed = 4.0f;
         curr_speed = speed;
@@ -175,37 +152,34 @@ public class GunUFOScript : MonoBehaviour
         dist = Vector3.Distance(body.position, Target.position);
     }
 
-    void Update()
+    protected override void Update()
     {
-        moveTowardTarget();
+        base.Update();
+        
 
-        checkVelocity();
+        //destroys object if they fall through the ground or get too far from the castle
+        if (dist > 150)
+        {
+            destroyEnemy();
+        }
+
         float curr_dist = Vector3.Distance(body.position, Target.position);
         if (dist < curr_dist && !wasGrabbed && notFalling)
         {
             StartCoroutine(resetVelocity());
         }
 
-        //destroys object if they fall through the ground or get too far from the castle
-        if (gameObject.transform.position.y < -100f || dist > 150)
-        {
-            destroyEnemy();
-        }
-        
-        //turret facement to target
+        //bady facement to target
         if (isGrabbed == false)
         {
             body.LookAt(Target.position - transform.position);
             body.Rotate(new Vector3(-190, 0, 180));
         }
+
         if(attacking == false && damageRoutine != null)
         {
             StopCoroutine(damageRoutine);
             damageRoutine = null;
-        }
-        if (GameObject.Find("Round Tracker").GetComponent<RoundScript>().roundchange)
-        {
-            Destroy(gameObject);
         }
 
 

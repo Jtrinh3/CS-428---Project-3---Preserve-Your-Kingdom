@@ -2,59 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankScript : MonoBehaviour
+public class TankScript : EnemyScript
 {
     //static variables are shared between game objects
-    private bool isGrabbed = false;
-    private bool wasGrabbed = false;
-    private bool destroyed = false;
-    private bool isCollided = false;
-    public Transform Target; //set target in script component in unity
-    private float curr_speed;
-    private float speed;
-    private Transform turret;
-    private Transform body;
-    private Coroutine damageRoutine;
-
-    public void objectIsGrabbed()
-    {
-        isGrabbed = true;
-        wasGrabbed = true;
-    }
-
-    public void objectIsReleased()
-    {
-        isGrabbed = false;
-    }
-
-    private void moveTowardTarget()
-    {
-        // Move our position a step closer to the target.
-        float step = curr_speed * Time.deltaTime; // calculate distance to move
-        transform.position = Vector3.MoveTowards(transform.position, Target.position, step);
-
-        // Check if the position of the cube and sphere are approximately equal.
-        if (Vector3.Distance(transform.position, Target.position) < 3f || destroyed)
-        {
-            curr_speed = 0.2f;
-        }
-        else curr_speed = speed;
+    protected Transform turret;
 
 
-        Physics.IgnoreLayerCollision(9, 9, false);
-        Physics.IgnoreLayerCollision(9, 0, false);
-
-    }
-
-   
-    private void destroyEnemy()
-    {
-        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
-        Destroy(gameObject);
-
-    }
-
-    public IEnumerator breakEnemy()
+    public override IEnumerator breakEnemy()
     {
         transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
         transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material = Target.GetComponent<Renderer>().material; ;
@@ -65,7 +19,7 @@ public class TankScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void checkVelocity()
+    protected override void checkVelocity()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 velocity = rb.velocity;
@@ -80,31 +34,8 @@ public class TankScript : MonoBehaviour
     }
 
 
-    //if colliding with castle begin damage routine
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Castle")
-        {
-            GameObject c = GameObject.Find("Castle");
-            damageRoutine = c.GetComponent<CastleScript>().StartDamage(0); //change inner number for additional damage
-            isCollided = true;
-        }
-    }
-
-    //at end of collission end damage
-    private void OnCollisionExit(Collision collision)
-    {
-
-        if (collision.gameObject.tag == "Castle")
-        {
-            GameObject c = GameObject.Find("Castle");
-            c.GetComponent<CastleScript>().EndDamage(damageRoutine);
-            isCollided = false;
-        }
-    }
-
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         speed = 5.0f;
         curr_speed = speed;
@@ -114,29 +45,18 @@ public class TankScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        moveTowardTarget();
+        base.Update();
 
-        checkVelocity();
 
-        if (gameObject.transform.position.y < -100f)
-        {
-            destroyEnemy();
-        }
-
+        //turret facement to target
         turret.LookAt(Target);
         turret.Rotate(new Vector3(-90, 90, 0));
-        //turret facement to target
         if (isGrabbed == false)
         {
             body.LookAt(Target.position - transform.position);
             body.Rotate(new Vector3(-90, 90, 0));
-        }
-
-        if (GameObject.Find("Round Tracker").GetComponent<RoundScript>().roundchange)
-        {
-            Destroy(gameObject);
         }
     }
 

@@ -2,43 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissilesScript: MonoBehaviour
+public class MissilesScript: EnemyScript
 {
     //static variables are shared between game objects
-    private bool isGrabbed = false;
-    private bool wasGrabbed = false;
-    private bool destroyed = false;
-    private bool isCollided = false;
-    private bool soundPlayed = false;
-    public Transform Target; //set target in script component in unity
-    private float dist;
-    private float curr_speed;
-    private float speed;
-    private Transform turret;
-    private Transform body;
-    private Coroutine damageRoutine, velocityReset;
-    private int counter = 0;
+    protected bool soundPlayed = false;
+    protected float dist;
+    protected Transform body;
+    protected Coroutine velocityReset;
+    protected int counter = 0;
 
-    public void objectIsGrabbed()
-    {
-        isGrabbed = true;
-        wasGrabbed = true;
-    }
-
-    public void objectIsReleased()
-    {
-        isGrabbed = false;
-        StartCoroutine(resetVelocity());
-    }
-
-    private IEnumerator resetVelocity()
-    {
-        yield return new WaitForSeconds(1f);
-        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-    }
-
-
-    private void moveTowardTarget()
+    protected override void moveTowardTarget()
     {
         // Move our position a step closer to the target.
         float step = curr_speed * Time.deltaTime; // calculate distance to move
@@ -52,15 +25,7 @@ public class MissilesScript: MonoBehaviour
 
     }
 
-
-    private void destroyEnemy()
-    {
-        GameObject.Find("Round Tracker").GetComponent<RoundScript>().enemiesLeft--;
-        Destroy(gameObject);
-
-    }
-
-    public IEnumerator breakEnemy()
+    public override IEnumerator breakEnemy()
     {
         soundPlayed = true;
         gameObject.GetComponent<AudioSource>().Play();
@@ -69,24 +34,14 @@ public class MissilesScript: MonoBehaviour
         destroyEnemy();
     }
 
-    void checkVelocity()
+    protected override void checkVelocity()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        Vector3 velocity = rb.velocity;
-        float avgVelocity = (velocity.x + velocity.y + velocity.z) / 3;
 
-        float deathVelocity = 70;
-        if ((velocity.x > deathVelocity || velocity.y > deathVelocity || velocity.z > deathVelocity) && wasGrabbed)
-        //if(avgVelocity >= 4f && wasGrabbed)
-        {
-            destroyed = true;
-            StartCoroutine(breakEnemy());
-        }
     }
 
 
     //if colliding with castle damage it
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Castle")
         {
@@ -100,12 +55,12 @@ public class MissilesScript: MonoBehaviour
     }
 
 
-    private void OnCollisionExit(Collision collision)
+    protected override void OnCollisionExit(Collision collision)
     {
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         speed = 15.0f;
         curr_speed = speed;
@@ -115,23 +70,10 @@ public class MissilesScript: MonoBehaviour
         dist = Vector3.Distance(body.position, Target.position);
     }
 
-    void Update()
+    protected override void Update()
     {
-        moveTowardTarget();
-        if (!destroyed)
-        {
-            float curr_dist = Vector3.Distance(body.position, Target.position);
-            if (dist < curr_dist && !wasGrabbed)
-            {
-                StartCoroutine(resetVelocity());
-            }
-        }
+        base.Update();
 
-        //destroys object if they fall through the ground or get too far from the castle
-        if (gameObject.transform.position.y < -100f)
-        {
-            destroyEnemy();
-        }
         if (dist > 300)
         {
             destroyEnemy();

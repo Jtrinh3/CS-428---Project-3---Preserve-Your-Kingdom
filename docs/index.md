@@ -7,7 +7,7 @@ Weblink: [https://jtrinh3.github.io/CS-428---Project-3---Preserve-Your-Kingdom/]
 Project Link: [https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/](https://github.com/Jtrinh3/CS-428---Project-3---Preserve-Your-Kingdom/)  
 Video Link: [Youtube](https://youtu.be/0fONLoUAdCc)
 
-The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Castle* which is available to play on [Newgrounds](https://www.newgrounds.com/portal/view/102209).
+The idea of this project is to create a game where the user defend their castle from enemies by being able to pick them up and throw them as well as use tools and weaponry to help. This game was originally inspired by the flash game *Defend Your Castle* which is available to play on [Newgrounds](https://www.newgrounds.com/portal/view/102209). This project is created by James Trinh and Omar Al-khatib.
 
 All developmental note below refers to the 11/30/2019 edition of the project.
 
